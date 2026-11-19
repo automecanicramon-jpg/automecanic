@@ -40,6 +40,10 @@
   color: #052e16 !important;
 }
 
+.admin-layout.admin-portal.mechanic-layout.dark-mode .mechanic-report-general-buttons button {
+  color: #052e16 !important;
+}
+
 .admin-layout.admin-portal.mechanic-layout .admin-sidebar {
   background: var(--admin-card) !important;
   color: var(--admin-text) !important;
