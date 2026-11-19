@@ -6026,7 +6026,7 @@ const printReport =
 
 .report-history-field {
   display: grid;
-  flex: 1 1 250px;
+  flex: 1 1 0;
   gap: 7px;
   min-width: 0;
 }
@@ -6039,21 +6039,33 @@ const printReport =
 }
 
 .report-history-search-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  align-items: end;
+  gap: 12px;
 }
 
 .report-history-search-controls input,
 .report-history-search-controls select {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  min-height: 42px;
-  padding: 8px 12px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 12px;
   border: 1px solid var(--admin-border);
   border-radius: 10px;
   background: var(--admin-card-soft);
   color: var(--admin-text);
+  font: inherit;
+  line-height: normal;
+}
+
+.report-history-view {
+  box-sizing: border-box;
+  min-height: 44px;
+  white-space: nowrap;
 }
 
 .report-history-match {
@@ -6084,14 +6096,13 @@ const printReport =
   }
 
   .report-history-search-controls {
-    align-items: stretch;
-    flex-direction: column;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .report-history-field,
   .report-history-view {
     width: 100%;
-    flex: auto;
+    flex: none;
   }
 
   .report-history-match {
