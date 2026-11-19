@@ -1,0 +1,2824 @@
+/* ============================================================
+   AutoMecanic — Portal del cliente
+   Diseño unificado con Administrador y Mecánico.
+   Reforzamos la legibilidad y la consistencia visual para PWA,
+   manteniendo una estética sólida y proporcional en móvil y desktop.
+============================================================ */
+.amc-admin-layout.amc-client-portal {
+  --client-primary: #2563eb;
+  --client-primary-hover: #1d4ed8;
+  --client-accent: #2563eb;
+  --client-primary-soft: #eaf3ff;
+  --client-primary-soft-2: #edf5ff;
+  --client-bg: #f4f7fb;
+  --client-card: #ffffff;
+  --client-card-soft: #f8fafc;
+  --client-text: #172033;
+  --client-text-soft: #64748b;
+  --client-muted: #94a3b8;
+  --client-border: #e5eaf1;
+  --client-hover: rgba(37, 99, 235, 0.08);
+  --client-success: #15803d;
+  --client-success-soft: #edf9f0;
+  --client-warning: #b45309;
+  --client-warning-soft: #fff7ed;
+  --client-danger: #b91c1c;
+  --client-danger-soft: #fef2f2;
+  --client-purple: #6d28d9;
+  --client-purple-soft: #f5f0ff;
+  --client-cyan: #0e7490;
+  --client-cyan-soft: #ecfeff;
+  --sidebar-width: 245px;
+  width: 100%;
+  min-width: 0;
+  min-height: 100dvh;
+  background: var(--client-bg);
+  color: var(--client-text);
+  font:
+    400 14px/1.5 -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Text",
+    "SF Pro Display",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  text-align: left;
+}
+.amc-admin-layout.amc-client-portal.dark-mode {
+  --client-bg: #09111b;
+  --client-card: #101720;
+  --client-card-soft: #111d2a;
+  --client-text: #edf3fa;
+  --client-text-soft: #9aa9ba;
+  --client-muted: #6f8196;
+  --client-border: rgba(148, 163, 184, 0.22);
+  --client-hover: rgba(148, 163, 184, 0.1);
+  --client-primary: #0a84ff;
+  --client-primary-hover: #409cff;
+  --client-accent: #0a84ff;
+  --client-primary-soft: rgba(10, 132, 255, 0.15);
+  --client-primary-soft-2: rgba(10, 132, 255, 0.1);
+  --client-success: #81dda2;
+  --client-success-soft: #17382a;
+  --client-warning: #ffd093;
+  --client-warning-soft: #3b2d21;
+  --client-danger: #ffaaaa;
+  --client-danger-soft: #42252d;
+  --client-purple: #c7adff;
+  --client-purple-soft: #302543;
+  --client-cyan: #83d9e8;
+  --client-cyan-soft: #143641;
+  color-scheme: dark;
+}
+
+.amc-client-portal.dark-mode {
+  background: var(--client-bg);
+  color: var(--client-text);
+}
+
+.amc-client-portal.dark-mode .amc-admin-sidebar,
+.amc-client-portal.dark-mode .amc-admin-header,
+.amc-client-portal.dark-mode .amc-profile-dropdown,
+.amc-client-portal.dark-mode .amc-welcome-card,
+.amc-client-portal.dark-mode .amc-section-card,
+.amc-client-portal.dark-mode .amc-stat-card,
+.amc-client-portal.dark-mode .amc-quick-action-card,
+.amc-client-portal.dark-mode .amc-client-vehicle-selector,
+.amc-client-portal.dark-mode .amc-client-vehicle-detail-card,
+.amc-client-portal.dark-mode .amc-client-transmission-form-card,
+.amc-client-portal.dark-mode .amc-client-transmission-history-card,
+.amc-client-portal.dark-mode .amc-client-maintenance-card,
+.amc-client-portal.dark-mode .amc-client-tires-card,
+.amc-client-portal.dark-mode .amc-client-transmission-history-item,
+.amc-client-portal.dark-mode .amc-client-vehicle-option,
+.amc-client-portal.dark-mode .amc-client-activity-card,
+.amc-client-portal.dark-mode .amc-client-page-card {
+  background: var(--client-card);
+  border-color: var(--client-border);
+}
+
+.amc-client-portal.dark-mode .amc-header-icon-button,
+.amc-client-portal.dark-mode .amc-mobile-menu-button,
+.amc-client-portal.dark-mode .amc-modal-close-button,
+.amc-client-portal.dark-mode .amc-profile-button,
+.amc-client-portal.dark-mode .amc-outline-button,
+.amc-client-portal.dark-mode .amc-secondary-button,
+.amc-client-portal.dark-mode .amc-client-transmission-submit,
+.amc-client-portal.dark-mode .amc-client-notification-read-button {
+  background: var(--client-card);
+  border-color: var(--client-border);
+  color: var(--client-text);
+}
+
+.amc-client-portal.dark-mode .amc-profile-dropdown > button:hover,
+.amc-client-portal.dark-mode .amc-notification-item:hover,
+.amc-client-portal.dark-mode .amc-notifications-footer:hover,
+.amc-client-portal.dark-mode .amc-mark-all-read:hover,
+.amc-client-portal.dark-mode .amc-quick-action-card:hover,
+.amc-client-portal.dark-mode .amc-nav-item:hover {
+  background: var(--client-hover);
+}
+
+.amc-client-portal.dark-mode .amc-header-date,
+.amc-client-portal.dark-mode .amc-header-icon-button,
+.amc-client-portal.dark-mode .amc-profile-button,
+.amc-client-portal.dark-mode .amc-notifications-header,
+.amc-client-portal.dark-mode .amc-notifications-list,
+.amc-client-portal.dark-mode .amc-notifications-footer {
+  background: var(--client-card);
+}
+.amc-client-portal *,
+.amc-client-portal *::before,
+.amc-client-portal *::after {
+  box-sizing: border-box;
+}
+.amc-client-portal :is(h1, h2, h3, h4, p) {
+  margin: 0;
+  font-family: inherit;
+  color: inherit;
+}
+.amc-client-portal :is(h1, h2, h3, h4) {
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.amc-client-portal :is(h1, h2) {
+  font-size: 24px;
+}
+.amc-client-portal :is(h3, h4) {
+  font-size: 18px;
+}
+.amc-client-portal :is(p, label, button, input, select, textarea, td) {
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.amc-client-portal :is(span, strong, small, th) {
+  font-family: inherit;
+}
+.amc-client-portal strong {
+  font-weight: 600;
+}
+.amc-client-portal p {
+  color: var(--client-text-soft);
+}
+.amc-client-portal button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.amc-client-portal button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.amc-client-portal :is(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid var(--client-primary);
+  outline-offset: 3px;
+}
+.amc-client-portal button {
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+}
+
+/* Marco: navegación estable, contenido sin grandes márgenes vacíos. */
+.amc-client-portal .amc-admin-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-width);
+  height: 100dvh;
+  padding: 24px 14px;
+  overflow-y: auto;
+  background: #ffffff;
+  color: var(--client-text);
+  border-right: 1px solid var(--client-border);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  z-index: 1200;
+}
+.amc-client-portal .amc-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 2px 24px;
+  border-bottom: 1px solid var(--client-border);
+  margin-bottom: 24px;
+}
+.amc-client-portal .amc-brand-icon {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: white;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.amc-client-portal .amc-sidebar-brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.amc-client-portal .amc-sidebar-brand h4 {
+  font-size: 17px;
+  color: var(--client-text);
+}
+.amc-client-portal .amc-sidebar-brand span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-sidebar-nav {
+  display: grid;
+  gap: 6px;
+}
+.amc-client-portal .amc-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--client-text-soft);
+  text-align: left;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   CONTADOR DE NOTIFICACIONES — SIDEBAR
+   Mismo estilo rojo que la campana superior
+========================================================== */
+.amc-client-portal .amc-nav-label {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.amc-client-portal .amc-nav-notification-badge {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.25);
+}
+
+.amc-client-portal .amc-nav-item.active .amc-nav-notification-badge {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.amc-client-portal.dark-mode .amc-nav-notification-badge,
+.amc-client-portal.dark-mode .amc-nav-item.active .amc-nav-notification-badge {
+  background: #ff453a;
+  color: #ffffff;
+}
+
+.amc-client-portal .amc-nav-item i {
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+.amc-client-portal .amc-nav-item:hover {
+  background: var(--client-hover);
+  color: var(--client-primary);
+}
+.amc-client-portal .amc-nav-item.active {
+  background: var(--client-primary-soft);
+  color: var(--client-primary);
+  box-shadow: inset 3px 0 var(--client-accent);
+  font-weight: 600;
+}
+.amc-client-portal .amc-admin-main {
+  width: calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+  min-width: 0;
+}
+.amc-client-portal .amc-admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--client-border);
+  background: #ffffff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.amc-client-portal .amc-header-left,
+.amc-client-portal .amc-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.amc-client-portal .amc-header-left h1 {
+  font-size: 20px;
+}
+.amc-client-portal .amc-header-left p {
+  font-size: 12px;
+  margin-top: 3px;
+}
+.amc-client-portal .amc-header-right {
+  flex-shrink: 0;
+  gap: 8px;
+}
+.amc-client-portal .amc-header-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 12px;
+}
+.amc-client-portal .amc-header-date > div {
+  display: grid;
+  text-align: right;
+}
+.amc-client-portal .amc-header-date span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-header-date strong {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.amc-client-portal .amc-header-date i {
+  color: var(--client-primary);
+}
+.amc-client-portal
+  :is(
+    .amc-header-icon-button,
+    .amc-mobile-menu-button,
+    .amc-modal-close-button
+  ) {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card);
+  color: var(--client-text-soft);
+  font-size: 18px;
+}
+.amc-client-portal .amc-mobile-menu-button {
+  display: none;
+}
+.amc-client-portal .amc-header-notification {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 12px;
+  font-size: 11px;
+  background: #dc2626;
+  color: #fff;
+}
+.amc-client-portal .amc-profile-wrapper {
+  position: relative;
+}
+.amc-client-portal .amc-profile-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: var(--client-text);
+  text-align: left;
+}
+.amc-client-portal .amc-profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  background: var(--client-primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+.amc-client-portal .amc-profile-info {
+  display: grid;
+}
+.amc-client-portal .amc-profile-info strong {
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+.amc-client-portal .amc-profile-info span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 300px;
+  max-width: calc(100vw - 24px);
+
+  padding: 10px;
+
+  /* Fondo completamente sólido */
+  background: #ffffff;
+
+  border: 1px solid rgba(60, 60, 67, 0.14);
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.16),
+    0 4px 14px rgba(0, 0, 0, 0.06);
+
+  /* Aquí NO queremos transparencia */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  z-index: 2500;
+
+  overflow: hidden;
+}
+
+/* ==========================================================
+   DROPDOWN DEL PERFIL — MODO OSCURO
+========================================================== */
+
+.amc-client-portal.dark-mode .amc-profile-dropdown {
+  background: #1c1c1e;
+
+  border-color: rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.55),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+.amc-client-portal .amc-dropdown-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.amc-client-portal .amc-dropdown-profile > div:last-child {
+  display: grid;
+  min-width: 0;
+}
+.amc-client-portal .amc-dropdown-profile span {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-dropdown-divider {
+  height: 1px;
+  background: var(--client-border);
+  margin: 6px;
+}
+/* ==========================================================
+   DROPDOWN DEL PERFIL
+========================================================== */
+
+.amc-client-portal .amc-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 300px;
+  max-width: calc(100vw - 24px);
+
+  padding: 10px;
+
+  /* Fondo completamente sólido */
+  background: #ffffff;
+
+  border: 1px solid rgba(60, 60, 67, 0.14);
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.16),
+    0 4px 14px rgba(0, 0, 0, 0.06);
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+
+  z-index: 2500;
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   DROPDOWN DEL PERFIL — MODO OSCURO
+========================================================== */
+
+.amc-client-portal.dark-mode .amc-profile-dropdown {
+  background: #1c1c1e;
+
+  border-color: rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.55),
+    0 4px 16px rgba(0, 0, 0, 0.30);
+}
+
+
+/* ==========================================================
+   CONTENIDO INTERNO DEL DROPDOWN
+========================================================== */
+
+.amc-client-portal .amc-profile-dropdown-header {
+  background: transparent;
+}
+
+.amc-client-portal .amc-profile-dropdown-menu {
+  background: transparent;
+}
+
+.amc-client-portal .amc-profile-dropdown-item {
+  background: transparent;
+}
+
+/* Hover estilo Apple */
+.amc-client-portal .amc-profile-dropdown-item:hover {
+  background: rgba(0, 122, 255, 0.07);
+}
+
+/* Hover en modo oscuro */
+.amc-client-portal.dark-mode .amc-profile-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.075);
+}
+.amc-client-portal .amc-profile-dropdown > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--client-text);
+  text-align: left;
+}
+.amc-client-portal .amc-profile-dropdown > button:hover {
+  background: var(--client-hover);
+}
+.amc-client-portal .amc-profile-dropdown .amc-logout-button {
+  color: var(--client-danger);
+}
+.amc-client-portal .amc-admin-content {
+  width: 100%;
+  max-width: 1480px;
+  margin: auto;
+  padding: 24px 24px 72px;
+  background: transparent;
+}
+.amc-client-portal .amc-sidebar-overlay {
+  display: none;
+}
+
+/* Inicio: una bienvenida breve, cuatro tareas, datos a la vista. */
+.amc-client-portal .amc-client-home {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-areas: "welcome stats" "actions actions" "vehicles vehicles";
+  gap: 18px;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+}
+.amc-client-portal .amc-welcome-card {
+  grid-area: welcome;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--client-border);
+  border-top: 3px solid var(--client-primary);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.amc-client-portal.dark-mode .amc-welcome-card,
+.amc-client-portal.dark-mode .amc-section-card,
+.amc-client-portal.dark-mode .amc-stat-card,
+.amc-client-portal.dark-mode .amc-quick-action-card {
+  background: #111827;
+  border-color: rgba(148, 163, 184, 0.22);
+}
+.amc-client-portal .amc-welcome-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  color: var(--client-primary);
+}
+.amc-client-portal .amc-welcome-card h2 {
+  margin-bottom: 4px;
+}
+.amc-client-portal .amc-welcome-icon {
+  color: var(--client-primary);
+  font-size: 26px;
+  padding: 8px;
+}
+.amc-client-portal .amc-stats-grid {
+  grid-area: stats;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.amc-client-portal .amc-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid var(--client-border);
+  border-radius: 18px;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+.amc-client-portal .amc-stat-card > div:last-child {
+  display: grid;
+  min-width: 0;
+}
+.amc-client-portal .amc-stat-card span {
+  font-size: 14px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-stat-card strong {
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+.amc-client-portal .amc-stat-card small {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal
+  :is(
+    .amc-stat-icon,
+    .amc-quick-action-icon,
+    .amc-client-page-heading-icon,
+    .amc-client-notification-icon,
+    .amc-client-transmission-card-icon,
+    .amc-client-vehicle-option-icon,
+    .amc-table-vehicle-icon
+  ) {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--client-primary-soft);
+  color: var(--client-primary);
+  font-size: 18px;
+}
+.amc-client-portal .green,
+.amc-client-portal .amc-client-notification-icon.success {
+  color: var(--client-success);
+  background: var(--client-success-soft);
+}
+.amc-client-portal .orange,
+.amc-client-portal .amc-client-notification-icon.warning {
+  color: var(--client-warning);
+  background: var(--client-warning-soft);
+}
+.amc-client-portal .purple {
+  color: var(--client-purple);
+  background: var(--client-purple-soft);
+}
+.amc-client-portal .red,
+.amc-client-portal .amc-client-notification-icon.danger {
+  color: var(--client-danger);
+  background: var(--client-danger-soft);
+}
+.amc-client-portal .cyan {
+  color: var(--client-cyan);
+  background: var(--client-cyan-soft);
+}
+.amc-client-portal .amc-section-card {
+  background: #ffffff;
+  border: 1px solid var(--client-border);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+}
+.amc-client-portal .amc-section-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: transparent;
+}
+.amc-client-portal .amc-section-card-header p {
+  margin-top: 3px;
+}
+.amc-client-portal .amc-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+.amc-client-portal .amc-quick-action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid var(--client-border);
+  border-radius: 18px;
+  text-align: left;
+  color: var(--client-text);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
+}
+.amc-client-portal .amc-quick-action-card > i {
+  display: none;
+}
+.amc-client-portal .amc-quick-action-card > div:last-of-type {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.amc-client-portal .amc-quick-action-card strong,
+.amc-client-portal .amc-quick-action-card span {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.amc-client-portal .amc-quick-action-card span {
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-quick-action-card:hover {
+  border-color: var(--client-primary);
+  background: var(--client-primary-soft-2);
+}
+
+/* Botones: principal sólido; consulta con borde; acciones de lectura discretas. */
+.amc-client-portal
+  :is(
+    .amc-outline-button,
+    .amc-secondary-button,
+    .amc-client-transmission-submit,
+    .amc-client-notification-read-button
+  ) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 14px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card);
+  color: var(--client-primary);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+  text-align: center;
+  white-space: normal;
+}
+.amc-client-portal
+  :is(
+    .amc-outline-button,
+    .amc-secondary-button,
+    .amc-client-notification-read-button
+  ):hover {
+  border-color: var(--client-primary);
+  background: var(--client-primary-soft);
+}
+.amc-client-portal .amc-client-transmission-submit {
+  background: var(--client-accent);
+  color: #fff;
+  border-color: var(--client-accent);
+  min-width: 180px;
+}
+.amc-client-portal .amc-client-transmission-submit:hover:not(:disabled) {
+  background: var(--client-primary-hover);
+}
+
+/* Tabla con desplazamiento local, nunca de toda la página. */
+.amc-client-portal .amc-table-wrapper {
+  overflow-x: auto;
+}
+.amc-client-portal .amc-data-table {
+  width: 100%;
+  min-width: 670px;
+  border-collapse: collapse;
+}
+.amc-client-portal .amc-data-table th {
+  padding: 12px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  background: var(--client-card-soft);
+  color: var(--client-text-soft);
+  border-bottom: 1px solid var(--client-border);
+}
+.amc-client-portal .amc-data-table td {
+  padding: 14px 18px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--client-border);
+}
+.amc-client-portal .amc-data-table tr:last-child td {
+  border-bottom: 0;
+}
+.amc-client-portal .amc-vehicle-table-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.amc-client-portal .amc-vehicle-table-cell > div:last-child {
+  display: grid;
+  gap: 2px;
+}
+.amc-client-portal .amc-vehicle-table-cell small {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal
+  :is(.amc-plate-badge, .amc-status-badge, .amc-client-transmission-status) {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.amc-client-portal .amc-plate-badge {
+  color: var(--client-text);
+  background: var(--client-card-soft);
+  border: 1px solid var(--client-border);
+  white-space: nowrap;
+}
+.amc-client-portal .amc-status-badge {
+  background: var(--client-card-soft);
+}
+.amc-client-portal .amc-status-badge.active,
+.amc-client-portal .amc-status-badge.activo {
+  color: var(--client-success);
+  background: var(--client-success-soft);
+}
+.amc-client-portal .amc-status-badge.inactive,
+.amc-client-portal .amc-status-badge.inactivo {
+  color: var(--client-danger);
+  background: var(--client-danger-soft);
+}
+
+/* Vistas internas sin otra caja gigante alrededor. */
+.amc-client-portal .amc-client-layout,
+.amc-client-portal .amc-client-page-card {
+  width: 100%;
+  min-width: 0;
+}
+.amc-client-portal .amc-client-page-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.amc-client-portal .amc-client-page-heading > div:last-child {
+  min-width: 0;
+}
+.amc-client-portal .amc-client-page-heading > div > span {
+  display: none;
+}
+.amc-client-portal .amc-client-page-heading p {
+  margin-top: 4px;
+}
+.amc-client-portal .amc-client-vehicles-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.amc-client-portal .amc-client-vehicles-page > .amc-client-page-heading {
+  grid-column: 1/-1;
+  margin: 0;
+}
+.amc-client-portal
+  :is(
+    .amc-client-vehicle-selector,
+    .amc-client-vehicle-detail-card,
+    .amc-client-transmission-form-card,
+    .amc-client-transmission-history-card
+  ) {
+  min-width: 0;
+  background: var(--client-card);
+  border: 1px solid var(--client-border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.amc-client-portal .amc-client-vehicle-selector {
+  padding: 16px;
+}
+.amc-client-portal .amc-client-vehicle-selector-header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.amc-client-portal .amc-client-vehicle-selector-header strong,
+.amc-client-portal .amc-client-transmission-history-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  background: var(--client-primary-soft);
+  color: var(--client-primary);
+  border-radius: 12px;
+  font-size: 12px;
+}
+.amc-client-portal .amc-client-vehicle-selector-header p {
+  margin-bottom: 12px;
+}
+.amc-client-portal .amc-client-vehicle-selector-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 10px;
+}
+.amc-client-portal .amc-client-vehicle-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  text-align: left;
+  color: var(--client-text);
+  background: var(--client-card);
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+}
+.amc-client-portal .amc-client-vehicle-option-info {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 2px;
+}
+.amc-client-portal .amc-client-vehicle-option-info strong {
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-client-vehicle-option-info span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-client-vehicle-option-check {
+  visibility: hidden;
+  color: var(--client-primary);
+}
+.amc-client-portal .amc-client-vehicle-option.active {
+  border-color: var(--client-primary);
+  background: var(--client-primary-soft);
+}
+.amc-client-portal
+  .amc-client-vehicle-option.active
+  .amc-client-vehicle-option-check {
+  visibility: visible;
+}
+.amc-client-portal .amc-client-vehicle-option:hover {
+  border-color: var(--client-primary);
+}
+.amc-client-portal .amc-client-vehicle-hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border-bottom: 1px solid var(--client-border);
+}
+.amc-client-portal .amc-client-vehicle-large-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 12px;
+  color: var(--client-primary);
+  background: var(--client-primary-soft);
+  font-size: 22px;
+}
+.amc-client-portal .amc-client-vehicle-label {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-client-vehicle-hero h3 {
+  margin: 2px 0;
+}
+.amc-client-portal .amc-client-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 4px 18px;
+  gap: 0 24px;
+}
+.amc-client-portal .amc-client-detail-item {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--client-border);
+}
+.amc-client-portal .amc-client-detail-item:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+.amc-client-portal .amc-client-detail-item span {
+  color: var(--client-text-soft);
+  font-size: 14px;
+}
+.amc-client-portal .amc-client-detail-item strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-client-status-badge {
+  color: var(--client-success);
+}
+.amc-client-portal .amc-client-readonly-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--client-border);
+  background: var(--client-card-soft);
+}
+.amc-client-portal .amc-client-readonly-notice i {
+  color: var(--client-primary);
+  margin-top: 3px;
+}
+
+/* Avisos compactos: texto y botón en la misma fila en escritorio. */
+.amc-client-portal .amc-client-notifications-list {
+  display: grid;
+  gap: 10px;
+}
+.amc-client-portal .amc-client-notification-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--client-border);
+  border-radius: 18px;
+  background: var(--client-card);
+}
+.amc-client-portal .amc-client-notification-card.is-unread {
+  border-left: 3px solid var(--client-primary);
+}
+.amc-client-portal .amc-client-notification-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 20px;
+  row-gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.amc-client-portal .amc-client-notification-heading {
+  grid-column: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+}
+.amc-client-portal .amc-client-notification-heading strong {
+  font-size: 14px;
+}
+.amc-client-portal .amc-client-notification-heading span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-client-notification-body > p {
+  grid-column: 1;
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-client-notification-actions {
+  grid-column: 2;
+  grid-row: 1/3;
+  display: flex;
+  align-items: center;
+}
+.amc-client-portal .amc-client-notification-read {
+  font-size: 12px;
+  color: var(--client-text-soft);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Transmisión a todo el ancho; historial debajo, sin columna vacía. */
+.amc-client-portal .amc-client-transmission-security {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  background: var(--client-primary-soft);
+  border-radius: 12px;
+}
+.amc-client-portal .amc-client-transmission-security > i {
+  color: var(--client-primary);
+  font-size: 18px;
+}
+.amc-client-portal .amc-client-transmission-security strong {
+  display: block;
+  margin-bottom: 2px;
+}
+.amc-client-portal .amc-client-transmission-grid {
+  display: grid;
+  gap: 18px;
+}
+.amc-client-portal .amc-client-transmission-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--client-border);
+}
+.amc-client-portal .amc-client-transmission-card-header > div:nth-child(2) {
+  min-width: 0;
+}
+.amc-client-portal .amc-client-transmission-card-header > div > span {
+  display: none;
+}
+.amc-client-portal .amc-client-transmission-card-header h3 {
+  font-size: 18px;
+}
+.amc-client-portal .amc-client-transmission-card-header p {
+  margin-top: 2px;
+}
+.amc-client-portal .amc-client-transmission-history-count {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.amc-client-portal .amc-client-transmission-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+  padding: 18px;
+}
+.amc-client-portal .amc-client-transmission-fields {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.amc-client-portal .amc-client-transmission-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  margin: 0;
+}
+.amc-client-portal .amc-client-transmission-field > span {
+  font-size: 14px;
+  font-weight: 600;
+}
+.amc-client-portal .amc-client-transmission-field > small {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal
+  .amc-client-transmission-field
+  :is(
+    select,
+    input[type="date"],
+    input[type="time"],
+    input[type="text"],
+    textarea
+  ) {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  color: var(--client-text);
+  background: var(--client-card);
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.amc-client-portal
+  .amc-client-transmission-field
+  :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  ) {
+  background: var(--client-card-soft, #f8fafc);
+  color: var(--client-text, #172033);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  min-height: 52px;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color-scheme: light dark;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-text-fill-color: var(--client-text, #172033);
+}
+
+.amc-client-portal
+  .amc-client-transmission-field
+  :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  )::-webkit-datetime-edit,
+.amc-client-portal
+  .amc-client-transmission-field
+  :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  )::-webkit-datetime-edit-fields-wrapper,
+.amc-client-portal
+  .amc-client-transmission-field
+  :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  )::-webkit-datetime-edit-text {
+  color: var(--client-text, #172033);
+  -webkit-text-fill-color: var(--client-text, #172033) !important;
+}
+
+.amc-client-portal
+  .amc-client-transmission-field
+  :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  )::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.85;
+  filter: grayscale(1) contrast(1.25);
+}
+
+.amc-client-portal.dark-mode
+  .amc-client-transmission-field
+  :is(
+    select,
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="text"],
+    textarea
+  ) {
+  color-scheme: dark;
+  background: var(--client-card-soft, #111d2a);
+  color: var(--client-text, #edf3fa);
+}
+
+.amc-client-portal.dark-mode
+  .amc-client-transmission-field
+  :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  )::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.7);
+}
+
+.amc-client-portal.dark-mode
+  .amc-client-transmission-field
+  :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  ) {
+  background: var(--client-card-soft, #111d2a);
+  color: var(--client-text, #edf3fa);
+  -webkit-text-fill-color: var(--client-text, #edf3fa);
+}
+.amc-client-portal .amc-client-transmission-field textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+.amc-client-portal .amc-client-transmission-description-field textarea {
+  flex: 1;
+}
+.amc-client-portal textarea::placeholder {
+  color: var(--client-muted);
+  opacity: 1;
+}
+.amc-client-portal .amc-client-transmission-counter {
+  align-self: flex-end;
+  font-variant-numeric: tabular-nums;
+}
+.amc-client-portal .amc-client-transmission-symptoms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 4px;
+}
+.amc-client-portal .amc-client-transmission-symptom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 10px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card-soft);
+  cursor: pointer;
+}
+.amc-client-portal .amc-client-transmission-symptom input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.amc-client-portal .amc-client-transmission-check {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  border: 1px solid var(--client-border);
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  background: var(--client-card);
+  color: transparent;
+}
+.amc-client-portal .amc-client-transmission-symptom.active {
+  background: var(--client-primary-soft);
+  border-color: var(--client-primary);
+}
+.amc-client-portal
+  .amc-client-transmission-symptom.active
+  .amc-client-transmission-check {
+  background: var(--client-accent);
+  color: #fff;
+  border-color: var(--client-accent);
+}
+.amc-client-portal .amc-client-transmission-symptom:hover {
+  border-color: var(--client-primary);
+}
+.amc-client-portal .amc-client-transmission-symptom:focus-within {
+  outline: 2px solid var(--client-primary);
+  outline-offset: 2px;
+}
+.amc-client-portal .amc-client-transmission-external {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  background: var(--client-card-soft);
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+}
+.amc-client-portal .amc-client-transmission-external strong {
+  display: block;
+  margin-bottom: 2px;
+}
+.amc-client-portal .amc-client-transmission-radio-group {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.amc-client-portal .amc-client-transmission-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card);
+  cursor: pointer;
+}
+.amc-client-portal .amc-client-transmission-radio-group input {
+  accent-color: var(--client-primary);
+  margin: 0;
+}
+.amc-client-portal .amc-client-transmission-radio-group label:has(:checked) {
+  border-color: var(--client-primary);
+  background: var(--client-primary-soft);
+}
+.amc-client-portal .amc-client-transmission-external-field {
+  grid-column: 1/-1;
+}
+.amc-client-portal .amc-client-transmission-actions {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--client-border);
+  padding-top: 14px;
+}
+.amc-client-portal .amc-client-transmission-history-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+.amc-client-portal .amc-client-transmission-history-item {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card-soft);
+}
+.amc-client-portal .amc-client-reschedule-proposal {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid var(--client-warning);
+  border-radius: 10px;
+  background: var(--client-warning-soft);
+}
+.amc-client-portal .amc-client-reschedule-proposal > div:first-child {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 5px 8px;
+  color: var(--client-text);
+  font-size: 12px;
+}
+.amc-client-portal .amc-client-reschedule-proposal > div:first-child > i {
+  grid-row: span 2;
+  color: var(--client-warning);
+  font-size: 18px;
+}
+.amc-client-portal .amc-client-reschedule-proposal strong {
+  grid-column: 2;
+}
+.amc-client-portal .amc-client-reschedule-proposal .amc-client-transmission-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border-top: 1px solid color-mix(in srgb, var(--client-warning) 35%, transparent);
+  padding-top: 12px;
+}
+.amc-client-portal .amc-client-reschedule-proposal button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+.amc-client-portal .amc-client-transmission-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.amc-client-portal .amc-client-transmission-history-top > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.amc-client-portal .amc-client-transmission-history-top strong {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.amc-client-portal .amc-client-transmission-history-top > div > span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-client-transmission-status.pending {
+  color: var(--client-warning);
+  background: var(--client-warning-soft);
+}
+.amc-client-portal .amc-client-transmission-status.reviewed {
+  color: var(--client-primary);
+  background: var(--client-primary-soft);
+}
+.amc-client-portal .amc-client-transmission-status.attended {
+  color: var(--client-success);
+  background: var(--client-success-soft);
+}
+.amc-client-portal .amc-client-transmission-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+.amc-client-portal .amc-client-transmission-tags span {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--client-purple);
+  background: var(--client-purple-soft);
+}
+.amc-client-portal .amc-client-transmission-description {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-client-transmission-external-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px;
+  background: var(--client-warning-soft);
+  border-radius: 12px;
+}
+.amc-client-portal .amc-client-transmission-external-detail > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Carga, errores y perfil con la misma tipografía. */
+.amc-client-portal
+  :is(
+    .amc-component-loading,
+    .amc-empty-state,
+    .amc-client-empty-state,
+    .amc-client-transmission-empty
+  ) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 140px;
+  padding: 24px;
+  text-align: center;
+}
+.amc-client-portal
+  :is(.amc-empty-state, .amc-client-empty-state, .amc-client-transmission-empty)
+  > i {
+  font-size: 24px;
+  color: var(--client-primary);
+}
+.amc-client-portal .amc-client-empty-icon,
+.amc-client-portal .amc-client-transmission-empty > div {
+  font-size: 24px;
+  color: var(--client-primary);
+}
+.amc-client-portal .amc-app-spinner,
+.amc-client-portal .amc-client-transmission-button-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--client-border);
+  border-top-color: var(--client-primary);
+  border-radius: 50%;
+  animation: client-spin 0.8s linear infinite;
+}
+.amc-client-portal .amc-client-transmission-button-spinner {
+  width: 16px;
+  height: 16px;
+  border-color: #ffffff55;
+  border-top-color: #fff;
+}
+@keyframes client-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.amc-client-portal .amc-app-alert {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+.amc-client-portal .amc-app-alert > i:first-child {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+.amc-client-portal .amc-app-alert > span {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-app-alert button {
+  flex: 0 0 auto;
+}
+.amc-client-portal .amc-app-alert.danger {
+  background: var(--client-danger-soft);
+  color: var(--client-danger);
+}
+.amc-client-portal .amc-app-alert.success {
+  background: var(--client-success-soft);
+  color: var(--client-success);
+}
+@media (max-width: 420px) {
+  .amc-client-portal .amc-app-alert {
+    gap: 9px;
+    padding: 11px 12px;
+  }
+}
+.amc-client-portal .amc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: #081326aa;
+}
+.amc-client-portal .amc-app-modal {
+  width: min(440px, 100%);
+  max-height: calc(100dvh - 32px);
+
+  display: flex;
+  flex-direction: column;
+
+  /* Fondo sólido para impedir que se vea el contenido posterior */
+  background: #ffffff;
+
+  border: 1px solid rgba(60, 60, 67, 0.14);
+  border-radius: 18px;
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.22),
+    0 4px 18px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+
+  /* Mantiene el acabado Apple sin volver transparente el modal */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Modal en modo oscuro */
+.amc-client-portal.dark-mode .amc-app-modal {
+  background: #1c1c1e;
+  border-color: rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.55),
+    0 4px 18px rgba(0, 0, 0, 0.3);
+}
+.amc-client-portal .amc-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--client-border);
+  flex-shrink: 0;
+}
+.amc-client-portal .amc-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  min-height: 0;
+}
+.amc-client-portal .amc-profile-modal-top {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding-bottom: 18px;
+  text-align: center;
+}
+.amc-client-portal .amc-profile-large-avatar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--client-primary);
+  font-size: 20px;
+  font-weight: 600;
+}
+.amc-client-portal .amc-profile-modal-top h3 {
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.amc-client-portal .amc-profile-modal-top > span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-profile-detail {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--client-border);
+}
+.amc-client-portal .amc-profile-detail > i {
+  color: var(--client-primary);
+  margin-top: 3px;
+}
+.amc-client-portal .amc-profile-detail > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.amc-client-portal .amc-profile-detail small {
+  font-size: 14px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-profile-detail strong {
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px;
+  border-top: 1px solid var(--client-border);
+  flex-shrink: 0;
+}
+
+/* Cambia la distribución, no la escala de lectura. */
+
+/* ============================================================
+   SISTEMA VISUAL AUTOMECANIC · APPLE
+   Administrador, cliente y mecánico comparten la misma gramática
+   visual. Este bloque forma parte integral de la hoja completa.
+============================================================ */
+.amc-client-portal
+  :is(
+    .amc-stat-card,
+    .amc-section-card,
+    .amc-client-vehicle-selector,
+    .amc-client-vehicle-detail-card,
+    .amc-client-transmission-form-card,
+    .amc-client-transmission-history-card,
+    .amc-client-maintenance-card,
+    .amc-client-tires-card
+  ) {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.025),
+    0 8px 28px rgba(0, 0, 0, 0.045);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.amc-client-portal .amc-nav-item,
+.amc-client-portal button {
+  -webkit-font-smoothing: antialiased;
+}
+
+.amc-client-portal .amc-nav-item.active {
+  box-shadow: none;
+}
+
+.amc-client-portal .amc-quick-action-card {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.amc-client-portal .amc-quick-action-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.055);
+}
+
+.amc-client-portal.dark-mode
+  :is(
+    .amc-stat-card,
+    .amc-section-card,
+    .amc-client-vehicle-selector,
+    .amc-client-vehicle-detail-card,
+    .amc-client-transmission-form-card,
+    .amc-client-transmission-history-card,
+    .amc-client-maintenance-card,
+    .amc-client-tires-card
+  ) {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.025) inset,
+    0 12px 34px rgba(0, 0, 0, 0.24);
+}
+
+@media (min-width: 1700px) {
+  .amc-client-portal .amc-client-details-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .amc-client-portal .amc-client-detail-item:nth-last-child(-n + 4) {
+    border-bottom: 0;
+  }
+}
+@media (max-width: 1250px) {
+  .amc-client-portal .amc-stat-card {
+    align-items: flex-start;
+    padding: 14px;
+    gap: 8px;
+  }
+  .amc-client-portal .amc-stat-icon {
+    display: none;
+  }
+  .amc-client-portal .amc-client-vehicles-page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  .amc-client-portal .amc-admin-sidebar {
+    width: min(280px, 85vw);
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+  }
+  .amc-client-portal .amc-admin-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+  .amc-client-portal .amc-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    display: block;
+    z-index: 1100;
+    background: #08132699;
+  }
+  .amc-client-portal .amc-admin-main {
+    width: 100%;
+    margin-left: 0;
+  }
+  .amc-client-portal .amc-mobile-menu-button {
+    display: grid;
+  }
+  .amc-client-portal .amc-header-date {
+    display: none;
+  }
+  .amc-client-portal .amc-admin-content {
+    padding: 20px 20px 72px;
+  }
+  .amc-client-portal .amc-admin-header {
+    padding: 12px 20px;
+  }
+  .amc-client-portal .amc-client-vehicles-page {
+    grid-template-columns: 1fr;
+  }
+  .amc-client-portal .amc-client-vehicle-selector-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .amc-client-portal .amc-client-vehicle-selector-header p {
+    margin: 0 0 10px;
+  }
+  .amc-client-portal .amc-client-vehicle-option {
+    padding: 10px;
+  }
+  .amc-client-portal .amc-client-vehicle-option-icon {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .amc-client-portal .amc-admin-header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  .amc-client-portal .amc-header-left,
+  .amc-client-portal .amc-header-right {
+    gap: 8px;
+  }
+  .amc-client-portal .amc-header-left h1 {
+    font-size: 18px;
+  }
+  .amc-client-portal .amc-header-left p {
+    display: none;
+  }
+  .amc-client-portal .amc-profile-info,
+  .amc-client-portal .amc-profile-button > i {
+    display: none;
+  }
+  .amc-client-portal .amc-admin-content {
+    padding: 18px 12px 80px;
+  }
+  .amc-client-portal .amc-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .amc-client-portal .amc-stat-card strong {
+    font-size: 22px;
+  }
+  .amc-client-portal .amc-welcome-icon {
+    display: none;
+  }
+  .amc-client-portal .amc-section-card-header {
+    padding: 14px;
+  }
+  .amc-client-portal .amc-quick-actions-grid {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 8px;
+  }
+  .amc-client-portal .amc-quick-action-card {
+    padding: 12px;
+    grid-template-columns: 36px minmax(0, 1fr) auto;
+  }
+  .amc-client-portal .amc-quick-action-card > i {
+    display: block;
+    color: var(--client-muted);
+  }
+  .amc-client-portal .amc-client-vehicle-selector-list {
+    grid-template-columns: 1fr;
+  }
+  .amc-client-portal .amc-client-vehicle-option-icon {
+    display: grid;
+  }
+  .amc-client-portal .amc-client-notification-body {
+    grid-template-columns: 1fr;
+  }
+  .amc-client-portal .amc-client-notification-actions {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 6px;
+  }
+  .amc-client-portal .amc-client-notification-card {
+    padding: 12px;
+    gap: 10px;
+  }
+  .amc-client-portal .amc-client-transmission-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 14px;
+  }
+  .amc-client-portal .amc-client-transmission-fields {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .amc-client-portal .amc-client-transmission-description-field textarea {
+    min-height: 120px;
+  }
+  .amc-client-portal
+    .amc-client-transmission-field
+    :is(
+      input[type="date"],
+      input[type="time"],
+      input[type="text"],
+      select,
+      textarea
+    ) {
+    font-size: 16px;
+  }
+  .amc-client-portal .amc-client-transmission-external {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .amc-client-portal .amc-client-transmission-card-header {
+    padding: 14px;
+  }
+  .amc-client-portal .amc-client-transmission-submit {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+@media (max-width: 400px) {
+  .amc-client-portal .amc-client-transmission-symptoms {
+    grid-template-columns: 1fr;
+  }
+  .amc-client-portal .amc-client-details-grid {
+    grid-template-columns: 1fr;
+  }
+  .amc-client-portal .amc-client-detail-item:nth-last-child(2) {
+    border-bottom: 1px solid var(--client-border);
+  }
+  .amc-client-portal .amc-client-transmission-card-header {
+    flex-wrap: wrap;
+  }
+  .amc-client-portal .amc-client-transmission-card-header > div:nth-child(2) {
+    flex: 1;
+  }
+  .amc-client-portal .amc-header-left h1 {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .amc-client-portal * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .amc-client-portal .amc-app-spinner,
+  .amc-client-portal .amc-client-transmission-button-spinner {
+    animation-duration: 2s;
+  }
+}
+
+/* Bienvenida personal: iniciales y vehículo real, sin animaciones decorativas. */
+.amc-client-portal .amc-home-actions {
+  grid-area: actions;
+  min-width: 0;
+}
+.amc-client-portal .amc-home-vehicles {
+  grid-area: vehicles;
+  min-width: 0;
+}
+.amc-client-portal .amc-welcome-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.amc-client-portal .amc-welcome-person > div:last-child {
+  min-width: 0;
+}
+.amc-client-portal .amc-welcome-avatar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  background: var(--client-primary-soft);
+  border: 1px solid var(--client-accent);
+  color: var(--client-primary);
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.amc-client-portal .amc-welcome-vehicle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--client-border);
+  padding-top: 16px;
+  min-width: 0;
+}
+.amc-client-portal .amc-welcome-car {
+  flex: 0 0 64px;
+  color: var(--client-primary);
+}
+.amc-client-portal .amc-welcome-car svg {
+  display: block;
+  width: 64px;
+  height: 40px;
+}
+.amc-client-portal .amc-welcome-vehicle-info {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.amc-client-portal .amc-welcome-vehicle-info small {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+.amc-client-portal .amc-welcome-vehicle-info strong {
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-welcome-vehicle-info span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+  overflow-wrap: anywhere;
+}
+.amc-client-portal .amc-welcome-vehicle .amc-outline-button {
+  flex-shrink: 0;
+}
+.amc-client-portal .amc-quick-action-icon {
+  background: var(--client-primary-soft);
+  color: var(--client-primary);
+  width: 40px;
+  height: 40px;
+  flex-basis: 40px;
+}
+.amc-client-portal .amc-quick-action-card > div:last-of-type {
+  display: grid;
+  gap: 4px;
+}
+.amc-client-portal .amc-client-detail-item:nth-last-child(-n + 4) {
+  border-bottom: 0;
+}
+.amc-client-portal .amc-client-transmission-card-header {
+  background: var(--client-primary-soft-2);
+}
+.amc-client-portal .amc-client-vehicle-hero {
+  background: var(--client-primary-soft-2);
+}
+@media (max-width: 1250px) {
+  .amc-client-portal .amc-client-home {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "welcome" "stats" "actions" "vehicles";
+  }
+  .amc-client-portal .amc-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .amc-client-portal .amc-quick-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .amc-client-portal .amc-quick-action-card {
+    flex-direction: row;
+    align-items: center;
+  }
+  .amc-client-portal .amc-client-details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .amc-client-portal .amc-client-detail-item:nth-last-child(3),
+  .amc-client-portal .amc-client-detail-item:nth-last-child(4) {
+    border-bottom: 1px solid var(--client-border);
+  }
+}
+@media (max-width: 700px) {
+  .amc-client-portal .amc-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .amc-client-portal .amc-welcome-card {
+    padding: 18px;
+    gap: 16px;
+  }
+  .amc-client-portal .amc-welcome-person {
+    align-items: flex-start;
+  }
+  .amc-client-portal .amc-welcome-vehicle {
+    flex-wrap: wrap;
+  }
+  .amc-client-portal .amc-welcome-vehicle .amc-outline-button {
+    width: 100%;
+  }
+  .amc-client-portal .amc-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .amc-client-portal .amc-quick-action-card {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    padding: 14px;
+  }
+  .amc-client-portal .amc-client-transmission-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .amc-client-portal .amc-client-transmission-fields {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .amc-client-portal .amc-client-transmission-external {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .amc-client-portal .amc-client-transmission-radio-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .amc-client-portal .amc-client-transmission-symptoms {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 400px) {
+  .amc-client-portal .amc-client-details-grid {
+    grid-template-columns: 1fr;
+  }
+  .amc-client-portal .amc-client-detail-item:not(:last-child) {
+    border-bottom: 1px solid var(--client-border);
+  }
+  .amc-client-portal .amc-welcome-avatar {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: 16px;
+  }
+  .amc-client-portal .amc-client-transmission-form {
+    padding: 14px;
+  }
+  .amc-client-portal .amc-client-transmission-field > span {
+    font-size: 13px;
+  }
+  .amc-client-portal .amc-client-transmission-field :is(
+      input[type="date"],
+      input[type="time"],
+      input[type="text"],
+      select,
+      textarea
+    ) {
+    min-height: 44px;
+    font-size: 14px;
+  }
+}
+/* ==========================================================
+   MANTENIMIENTO PREVENTIVO — CLIENTE
+   Solo lectura. Hereda automáticamente las variables del
+   tema claro/oscuro del portal.
+========================================================== */
+
+.amc-client-portal .amc-client-maintenance-card {
+  width: 100%;
+  min-width: 0;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid var(--client-border);
+  border-radius: 18px;
+  background: var(--client-card-soft);
+}
+
+.amc-client-portal .amc-client-maintenance-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  min-width: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--client-border);
+}
+
+.amc-client-portal .amc-client-maintenance-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-maintenance-title > div:last-child {
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-maintenance-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--client-primary-soft);
+  color: var(--client-primary);
+  font-size: 20px;
+}
+
+.amc-client-portal .amc-client-maintenance-title span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--client-primary);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+}
+
+.amc-client-portal .amc-client-maintenance-title h3 {
+  font-size: 18px;
+}
+
+.amc-client-portal .amc-client-maintenance-title p {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.amc-client-portal .amc-client-maintenance-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.amc-client-portal .amc-client-maintenance-status.is-ok {
+  color: var(--client-success);
+  background: var(--client-success-soft);
+  border-color: color-mix(in srgb, var(--client-success) 22%, transparent);
+}
+
+.amc-client-portal .amc-client-maintenance-status.is-warning {
+  color: var(--client-warning);
+  background: var(--client-warning-soft);
+  border-color: color-mix(in srgb, var(--client-warning) 22%, transparent);
+}
+
+.amc-client-portal .amc-client-maintenance-status.is-danger {
+  color: var(--client-danger);
+  background: var(--client-danger-soft);
+  border-color: color-mix(in srgb, var(--client-danger) 22%, transparent);
+}
+
+.amc-client-portal .amc-client-maintenance-status.is-neutral {
+  color: var(--client-text-soft);
+  background: var(--client-hover);
+  border-color: var(--client-border);
+}
+
+.amc-client-portal .amc-client-maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.amc-client-portal .amc-client-maintenance-item {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+  min-height: 104px;
+  padding: 14px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card);
+}
+
+.amc-client-portal .amc-client-maintenance-item > span {
+  color: var(--client-text-soft);
+  font-size: 12px;
+}
+
+.amc-client-portal .amc-client-maintenance-item > strong {
+  color: var(--client-text);
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.amc-client-portal .amc-client-maintenance-item > small {
+  color: var(--client-muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.amc-client-portal .amc-client-maintenance-remaining.is-ok {
+  border-color: color-mix(
+    in srgb,
+    var(--client-success) 24%,
+    var(--client-border)
+  );
+  background: var(--client-success-soft);
+}
+
+.amc-client-portal .amc-client-maintenance-remaining.is-warning {
+  border-color: color-mix(
+    in srgb,
+    var(--client-warning) 26%,
+    var(--client-border)
+  );
+  background: var(--client-warning-soft);
+}
+
+.amc-client-portal .amc-client-maintenance-remaining.is-danger {
+  border-color: color-mix(
+    in srgb,
+    var(--client-danger) 26%,
+    var(--client-border)
+  );
+  background: var(--client-danger-soft);
+}
+
+.amc-client-portal .amc-client-maintenance-remaining.is-ok > strong {
+  color: var(--client-success);
+}
+
+.amc-client-portal .amc-client-maintenance-remaining.is-warning > strong {
+  color: var(--client-warning);
+}
+
+.amc-client-portal .amc-client-maintenance-remaining.is-danger > strong {
+  color: var(--client-danger);
+}
+
+.amc-client-portal .amc-client-maintenance-empty {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px dashed var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card);
+}
+
+.amc-client-portal .amc-client-maintenance-empty > i {
+  margin-top: 2px;
+  color: var(--client-primary);
+  font-size: 18px;
+}
+
+.amc-client-portal .amc-client-maintenance-empty > div {
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-maintenance-empty strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.amc-client-portal .amc-client-maintenance-empty p {
+  font-size: 12px;
+}
+
+@media (max-width: 1250px) {
+  .amc-client-portal .amc-client-maintenance-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .amc-client-portal .amc-client-maintenance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .amc-client-portal .amc-client-maintenance-remaining {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .amc-client-portal .amc-client-maintenance-card {
+    margin-top: 14px;
+    padding: 14px;
+  }
+
+  .amc-client-portal .amc-client-maintenance-header {
+    display: grid;
+    gap: 12px;
+  }
+
+  .amc-client-portal .amc-client-maintenance-status {
+    justify-self: start;
+  }
+
+  .amc-client-portal .amc-client-maintenance-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .amc-client-portal .amc-client-maintenance-remaining {
+    grid-column: auto;
+  }
+
+  .amc-client-portal .amc-client-maintenance-item {
+    min-height: 0;
+  }
+}
+
+/* ============================================================
+   PUNTO 4 — ESTADO DE LLANTAS VISIBLE AL CLIENTE
+   Solo lectura. Conserva variables, modo oscuro y escala visual.
+============================================================ */
+
+.amc-client-portal .amc-client-tires-card {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid var(--client-border);
+  border-radius: 18px;
+  background: var(--client-card-soft);
+}
+
+.amc-client-portal .amc-client-tires-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.amc-client-portal .amc-client-tires-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-tires-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--client-primary-soft);
+  color: var(--client-primary);
+  font-size: 20px;
+}
+
+.amc-client-portal .amc-client-tires-title > div:last-child {
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-tires-title > div:last-child > span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  color: var(--client-primary);
+}
+
+.amc-client-portal .amc-client-tires-title h3 {
+  margin-bottom: 4px;
+}
+
+.amc-client-portal .amc-client-tires-title p {
+  font-size: 13px;
+}
+
+.amc-client-portal .amc-client-tires-status,
+.amc-client-portal .amc-client-tire-condition {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+  min-height: 30px;
+  padding: 5px 10px;
+  border: 1px solid var(--client-border);
+  border-radius: 999px;
+  background: var(--client-card);
+  color: var(--client-text-soft);
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.amc-client-portal .amc-client-tires-status.success,
+.amc-client-portal .amc-client-tire-condition.success {
+  border-color: color-mix(in srgb, var(--client-success) 32%, transparent);
+  background: var(--client-success-soft);
+  color: var(--client-success);
+}
+
+.amc-client-portal .amc-client-tires-status.warning,
+.amc-client-portal .amc-client-tire-condition.warning {
+  border-color: color-mix(in srgb, var(--client-warning) 32%, transparent);
+  background: var(--client-warning-soft);
+  color: var(--client-warning);
+}
+
+.amc-client-portal .amc-client-tires-status.danger,
+.amc-client-portal .amc-client-tire-condition.danger {
+  border-color: color-mix(in srgb, var(--client-danger) 32%, transparent);
+  background: var(--client-danger-soft);
+  color: var(--client-danger);
+}
+
+.amc-client-portal .amc-client-tires-status.neutral,
+.amc-client-portal .amc-client-tires-status.empty,
+.amc-client-portal .amc-client-tire-condition.neutral {
+  background: var(--client-card);
+  color: var(--client-text-soft);
+}
+
+.amc-client-portal .amc-client-tires-content {
+  display: grid;
+  gap: 14px;
+}
+
+.amc-client-portal .amc-client-tires-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.amc-client-portal .amc-client-tires-summary > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card);
+}
+
+.amc-client-portal .amc-client-tires-summary span,
+.amc-client-portal .amc-client-tire-details span,
+.amc-client-portal .amc-client-tire-wear span,
+.amc-client-portal .amc-client-tire-position span {
+  font-size: 12px;
+  color: var(--client-text-soft);
+}
+
+.amc-client-portal .amc-client-tires-summary strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.amc-client-portal .amc-client-tires-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.amc-client-portal .amc-client-tire-item {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--client-border);
+  border-radius: 18px;
+  background: var(--client-card);
+}
+
+.amc-client-portal .amc-client-tire-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--client-border);
+}
+
+.amc-client-portal .amc-client-tire-position {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-tire-position > i {
+  color: var(--client-primary);
+  font-size: 15px;
+}
+
+.amc-client-portal .amc-client-tire-position > div {
+  display: grid;
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-tire-position strong {
+  overflow-wrap: anywhere;
+}
+
+.amc-client-portal .amc-client-tire-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.amc-client-portal .amc-client-tire-details > div,
+.amc-client-portal .amc-client-tire-wear {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-tire-details strong,
+.amc-client-portal .amc-client-tire-wear strong {
+  overflow-wrap: anywhere;
+}
+
+.amc-client-portal .amc-client-tire-wear {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--client-border);
+}
+
+.amc-client-portal .amc-client-tires-empty {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px dashed var(--client-border);
+  border-radius: 12px;
+  background: var(--client-card);
+}
+
+.amc-client-portal .amc-client-tires-empty > i {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--client-primary);
+  font-size: 18px;
+}
+
+.amc-client-portal .amc-client-tires-empty strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.amc-client-portal .amc-client-tires-empty p {
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  .amc-client-portal .amc-client-tires-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .amc-client-portal .amc-client-tires-card {
+    padding: 14px;
+  }
+
+  .amc-client-portal .amc-client-tires-header {
+    display: grid;
+    gap: 12px;
+  }
+
+  .amc-client-portal .amc-client-tires-status {
+    justify-self: start;
+  }
+
+  .amc-client-portal .amc-client-tires-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .amc-client-portal .amc-client-tire-item-header {
+    display: grid;
+  }
+
+  .amc-client-portal .amc-client-tire-condition {
+    justify-self: start;
+  }
+
+  .amc-client-portal .amc-client-tire-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .amc-client-portal .amc-client-tire-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   CITAS DEL CLIENTE
+   Distribución definitiva:
+   Fecha   | Hora
+   Motivo  | Mecánico
+============================================================ */
+.amc-client-portal .amc-client-appointment-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
+  row-gap: 18px;
+  width: 100%;
+  margin-top: 14px;
+}
+
+.amc-client-portal .amc-client-appointment-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.amc-client-portal .amc-client-appointment-detail span {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--client-text);
+}
+
+.amc-client-portal .amc-client-appointment-detail strong {
+  display: block;
+  min-width: 0;
+  margin-top: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--client-text-soft);
+  overflow-wrap: anywhere;
+}
+
+/* Piso tipográfico para el portal, manteniendo intactos iconos y jerarquías mayores. */
+.amc-client-portal
+  :is(
+    p,
+    small,
+    .small,
+    span,
+    label,
+    .form-label,
+    .form-text,
+    th,
+    td,
+    button,
+    input,
+    select,
+    textarea,
+    .badge,
+    [class*="-caption"],
+    [class*="-description"],
+    [class*="-subtitle"],
+    [class*="-help"],
+    [class*="-hint"]
+  ) {
+  font-size: max(12px, 0.875em) !important;
+}

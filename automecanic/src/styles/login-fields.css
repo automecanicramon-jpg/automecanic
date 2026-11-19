@@ -1,0 +1,65 @@
+.login-card.card-dark-glass .input-group-custom {
+  background-color: #111827 !important;
+  border-color: #334155 !important;
+}
+
+.login-card.card-dark-glass .input-group-text {
+  background-color: #111827 !important;
+  color: #94a3b8 !important;
+  border-color: #334155 !important;
+}
+
+.login-card.card-dark-glass .form-control {
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+  caret-color: #f8fafc !important;
+  border-color: #334155 !important;
+  color-scheme: dark;
+}
+
+.login-card.card-dark-glass .form-control::placeholder {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+.login-card.card-dark-glass
+  .form-control:-webkit-autofill,
+.login-card.card-dark-glass
+  .form-control:-webkit-autofill:hover,
+.login-card.card-dark-glass
+  .form-control:-webkit-autofill:focus,
+.login-card.card-dark-glass
+  .form-control:-webkit-autofill:active,
+.login-card.card-dark-glass
+  .form-control:autofill {
+  -webkit-text-fill-color: #f8fafc !important;
+  caret-color: #f8fafc !important;
+  -webkit-box-shadow: 0 0 0 1000px #111827 inset !important;
+  box-shadow: 0 0 0 1000px #111827 inset !important;
+  border-color: #334155 !important;
+  transition: background-color 9999s ease-out 0s;
+}
+
+.login-card.card-light-glass .input-group-custom {
+  background-color: #f8f9fa;
+}
+
+.login-card.card-light-glass
+  .form-control:-webkit-autofill,
+.login-card.card-light-glass
+  .form-control:-webkit-autofill:hover,
+.login-card.card-light-glass
+  .form-control:-webkit-autofill:focus,
+.login-card.card-light-glass
+  .form-control:-webkit-autofill:active,
+.login-card.card-light-glass
+  .form-control:autofill {
+  -webkit-text-fill-color: #212529 !important;
+  caret-color: #212529 !important;
+  -webkit-box-shadow: 0 0 0 1000px #f8f9fa inset !important;
+  box-shadow: 0 0 0 1000px #f8f9fa inset !important;
+  border-color: #dee2e6 !important;
+  transition: background-color 9999s ease-out 0s;
+}

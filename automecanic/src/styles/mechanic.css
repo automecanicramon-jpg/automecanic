@@ -1,0 +1,2020 @@
+.admin-layout.admin-portal.mechanic-layout {
+  --admin-primary: #15803d;
+  --admin-primary-hover: #166534;
+  --admin-primary-soft: #ecfdf3;
+  --admin-primary-soft-2: #f6fcf7;
+  --admin-accent: #16a34a;
+  --admin-bg: #f3f8f4;
+  --admin-card: #ffffff;
+  --admin-secondary: #f7fbf8;
+  --admin-hover: #edf7ef;
+  --admin-text: #1f3426;
+  --admin-text-secondary: #536b5a;
+  --admin-muted: #718477;
+  --admin-border: #dce9df;
+  --admin-success: #16a34a;
+  --admin-success-soft: #f0fdf4;
+}
+
+.admin-layout.admin-portal.mechanic-layout.dark-mode {
+  --admin-bg: #090d14;
+  --admin-card: #101720;
+  --admin-secondary: #151e29;
+  --admin-hover: #192431;
+  --admin-text: #edf3fa;
+  --admin-text-secondary: #9aa9ba;
+  --admin-muted: #6f8196;
+  --admin-border: #222d3a;
+  --admin-warning-soft: rgba(245, 158, 11, 0.1);
+  --admin-danger-soft: rgba(239, 68, 68, 0.1);
+  --admin-primary: #86efac;
+  --admin-primary-hover: #bbf7d0;
+  --admin-accent: #4ade80;
+  --admin-primary-soft: rgba(34, 197, 94, 0.14);
+  --admin-primary-soft-2: #142b1d;
+  --admin-success: #86efac;
+  --admin-success-soft: rgba(34, 197, 94, 0.12);
+}
+
+.admin-layout.admin-portal.mechanic-layout.dark-mode .mechanic-primary-button {
+  color: #052e16 !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .admin-sidebar {
+  background: var(--admin-card) !important;
+  color: var(--admin-text) !important;
+  border-right-color: var(--admin-border) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .brand-icon {
+  background: #fff !important;
+  color: var(--admin-primary) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .sidebar-brand h4 {
+  color: var(--admin-text) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .sidebar-brand span {
+  color: var(--admin-text-secondary) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .nav-item {
+  color: var(--admin-text-secondary) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .nav-item:hover {
+  color: var(--admin-primary) !important;
+  background: var(--admin-hover) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .nav-item.active {
+  color: var(--admin-primary) !important;
+  background: var(--admin-primary-soft) !important;
+  box-shadow: inset 3px 0 var(--admin-accent) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .nav-item.active i {
+  color: var(--admin-primary) !important;
+}
+
+.admin-layout.admin-portal.mechanic-layout .mechanic-sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 9px 0;
+  margin-top: auto;
+  border-top: 1px solid var(--admin-border);
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.admin-layout.admin-portal.mechanic-layout .mechanic-sidebar-footer i {
+  color: var(--admin-primary);
+  font-size: 14px;
+}
+
+.admin-layout.admin-portal.mechanic-layout .profile-avatar,
+.admin-layout.admin-portal.mechanic-layout .profile-large-avatar {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+}
+
+.admin-layout.admin-portal.mechanic-layout .profile-detail > i {
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.admin-layout.admin-portal.mechanic-layout :is(.mechanic-link-button, .mechanic-primary-button) {
+  color: var(--admin-primary);
+}
+
+.admin-layout.admin-portal.mechanic-layout .table-action-button.view:hover {
+  border-color: var(--admin-border);
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.admin-layout.admin-portal.mechanic-layout .mechanic-vehicle-status {
+  cursor: default;
+}
+
+.mechanic-vehicle-modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.mechanic-vehicle-modal-heading .table-vehicle-icon {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+  font-size: 18px;
+}
+
+.mechanic-vehicle-modal-heading > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mechanic-vehicle-modal-heading strong {
+  color: var(--admin-text);
+  font-size: 15px;
+}
+
+.mechanic-vehicle-modal-heading span {
+  color: var(--admin-text-secondary);
+  font-size: 12px;
+}
+
+.mechanic-vehicle-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mechanic-vehicle-details-grid > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  background: var(--admin-secondary);
+}
+
+.mechanic-vehicle-details-grid small {
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-vehicle-details-grid strong {
+  overflow-wrap: anywhere;
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.mechanic-vehicle-owner-details {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 15px;
+  margin-top: 16px;
+  border-top: 1px solid var(--admin-border);
+}
+
+.mechanic-vehicle-owner-details h4 {
+  margin: 0 0 2px;
+  color: var(--admin-text);
+  font-size: 13px;
+}
+
+.mechanic-vehicle-owner-details span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--admin-text-secondary);
+  font-size: 11px;
+}
+
+.mechanic-vehicle-owner-details i {
+  width: 14px;
+  color: var(--admin-primary);
+  text-align: center;
+}
+
+.mechanic-home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mechanic-module {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mechanic-module-intro {
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  border: 1px solid var(--admin-border);
+  border-top: 3px solid var(--admin-accent);
+  border-radius: 14px;
+  background: linear-gradient(120deg, var(--admin-card), var(--admin-primary-soft-2));
+}
+
+.mechanic-module-intro h2 {
+  margin: 7px 0 4px !important;
+  color: var(--admin-text) !important;
+  font-size: 24px !important;
+}
+
+.mechanic-module-intro p {
+  max-width: 680px;
+  margin: 0 !important;
+  color: var(--admin-text-secondary) !important;
+  font-size: 13px !important;
+}
+
+.mechanic-module-intro-icon {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+  font-size: 25px;
+}
+
+.mechanic-client-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mechanic-client-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.mechanic-client-card {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  background: var(--admin-card);
+}
+
+.mechanic-client-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 13px;
+}
+
+.mechanic-client-avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mechanic-client-badge,
+.mechanic-status-pill {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--admin-success-soft);
+  color: var(--admin-success);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.mechanic-client-card h4 {
+  margin: 0 0 12px !important;
+  color: var(--admin-text) !important;
+  font-size: 14px !important;
+}
+
+.mechanic-client-contact,
+.mechanic-client-unit {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--admin-text-secondary);
+  font-size: 11px;
+}
+
+.mechanic-client-contact i,
+.mechanic-client-unit i {
+  width: 14px;
+  flex: 0 0 auto;
+  color: var(--admin-primary);
+  text-align: center;
+}
+
+.mechanic-client-contact span,
+.mechanic-client-unit span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mechanic-client-vehicles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  margin-top: 14px;
+  border-top: 1px solid var(--admin-border);
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-client-vehicles strong {
+  color: var(--admin-text);
+  font-size: 13px;
+}
+
+.mechanic-primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--admin-primary);
+  color: #fff !important;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.mechanic-primary-button i {
+  font-size: 12px;
+}
+
+.mechanic-status-pill {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.mechanic-status-pill.is-progress {
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-status-pill.is-scheduled {
+  background: var(--admin-warning-soft);
+  color: var(--admin-warning);
+}
+
+.mechanic-service-flow {
+  padding-bottom: 23px;
+}
+
+.mechanic-flow-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mechanic-flow-step {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+  background: var(--admin-secondary);
+}
+
+.mechanic-flow-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-flow-step strong,
+.mechanic-flow-step small {
+  display: block;
+}
+
+.mechanic-flow-step strong {
+  color: var(--admin-text);
+  font-size: 11px;
+}
+
+.mechanic-flow-step small {
+  margin-top: 3px;
+  color: var(--admin-text-secondary);
+  font-size: 9px;
+}
+
+.mechanic-maintenance-list,
+.mechanic-alert-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mechanic-maintenance-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-top: 1px solid var(--admin-border);
+}
+
+.mechanic-maintenance-row:first-child,
+.mechanic-alert-card:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.mechanic-maintenance-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.mechanic-maintenance-main > strong,
+.mechanic-maintenance-main > span {
+  display: block;
+}
+
+.mechanic-maintenance-main > strong {
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.mechanic-maintenance-main > span {
+  margin-top: 3px;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-progress-track {
+  height: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: var(--admin-hover);
+}
+
+.mechanic-progress-track span {
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+  background: var(--admin-accent);
+}
+
+.mechanic-maintenance-due {
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.mechanic-maintenance-due > span {
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.mechanic-maintenance-due small {
+  color: var(--admin-text-secondary);
+  font-size: 9px;
+}
+
+.mechanic-maintenance-due .due-soon {
+  color: var(--admin-warning);
+}
+
+.mechanic-maintenance-due .due-now {
+  color: var(--admin-danger);
+}
+
+.mechanic-maintenance-due .due-later {
+  color: var(--admin-success);
+}
+
+.mechanic-alert-card {
+  display: flex;
+  gap: 12px;
+  padding: 15px 0;
+  border-top: 1px solid var(--admin-border);
+}
+
+.mechanic-alert-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-alert-card.alert-warning .mechanic-alert-icon {
+  background: var(--admin-warning-soft);
+  color: var(--admin-warning);
+}
+
+.mechanic-alert-card.alert-success .mechanic-alert-icon {
+  background: var(--admin-success-soft);
+  color: var(--admin-success);
+}
+
+.mechanic-alert-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.mechanic-alert-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mechanic-alert-title strong {
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.mechanic-alert-title time,
+.mechanic-alert-content > span {
+  color: var(--admin-muted);
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.mechanic-alert-content p {
+  margin: 4px 0 5px !important;
+  color: var(--admin-text-secondary) !important;
+  font-size: 11px !important;
+}
+
+.mechanic-report-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+  gap: 16px;
+}
+
+.mechanic-report-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0 !important;
+  border: 0;
+  border-top: 1px solid var(--admin-border);
+  background: transparent;
+  color: var(--admin-text) !important;
+  text-align: left;
+}
+
+.mechanic-report-link:first-of-type {
+  border-top: 0;
+}
+
+.mechanic-report-link > span:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+.mechanic-report-link strong,
+.mechanic-report-link small {
+  display: block;
+}
+
+.mechanic-report-link strong {
+  font-size: 11px;
+}
+
+.mechanic-report-link small {
+  margin-top: 3px;
+  color: var(--admin-text-secondary);
+  font-size: 9px;
+}
+
+.mechanic-report-link-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-report-link > i:last-child {
+  color: var(--admin-muted);
+  font-size: 11px;
+}
+
+.mechanic-welcome {
+  min-height: 174px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 32px;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(74, 222, 128, 0.17), transparent 30%),
+    linear-gradient(120deg, #f0fdf4, #ffffff 72%);
+}
+
+.dark-mode .mechanic-welcome {
+  border-color: rgba(74, 222, 128, 0.15);
+  background:
+    radial-gradient(circle at 90% 15%, rgba(34, 197, 94, 0.14), transparent 30%),
+    linear-gradient(120deg, #13241d, #101720 72%);
+}
+
+.mechanic-welcome > div:first-child {
+  max-width: 640px;
+}
+
+.mechanic-eyebrow {
+  color: var(--admin-primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.mechanic-welcome h2 {
+  margin: 8px 0 7px;
+  color: var(--admin-text);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 750;
+}
+
+.mechanic-welcome p {
+  max-width: 540px;
+  margin: 0;
+  color: var(--admin-text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mechanic-welcome-mark {
+  width: 78px;
+  height: 78px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(21, 128, 61, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--admin-primary);
+  font-size: 34px;
+}
+
+.dark-mode .mechanic-welcome-mark {
+  border-color: rgba(74, 222, 128, 0.14);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.mechanic-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.mechanic-stat-card,
+.mechanic-panel {
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  background: var(--admin-card);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+}
+
+.mechanic-stat-card {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+}
+
+.mechanic-stat-icon,
+.mechanic-vehicle-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-stat-icon {
+  width: 43px;
+  height: 43px;
+  font-size: 19px;
+}
+
+.mechanic-stat-card > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mechanic-stat-card span {
+  color: var(--admin-text-secondary);
+  font-size: 11px;
+}
+
+.mechanic-stat-card strong {
+  margin-top: 3px;
+  color: var(--admin-text);
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.mechanic-stat-card .mechanic-stat-date {
+  font-size: 16px;
+}
+
+.mechanic-stat-card small {
+  margin-top: 3px;
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.mechanic-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.mechanic-panel {
+  min-width: 0;
+  padding: 20px;
+}
+
+.mechanic-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.mechanic-panel-heading h3 {
+  margin: 0;
+  color: var(--admin-text);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.mechanic-panel-heading p {
+  margin: 4px 0 0;
+  color: var(--admin-text-secondary);
+  font-size: 11px;
+}
+
+.mechanic-link-button {
+  flex: 0 0 auto;
+  padding: 6px 0 6px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--admin-primary);
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.mechanic-link-button i {
+  margin-left: 3px;
+}
+
+.mechanic-vehicle-list,
+.mechanic-service-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mechanic-vehicle-row,
+.mechanic-service-row {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 0;
+  border-top: 1px solid var(--admin-border);
+}
+
+.mechanic-vehicle-row:first-child,
+.mechanic-service-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.mechanic-vehicle-icon {
+  width: 37px;
+  height: 37px;
+  font-size: 17px;
+}
+
+.mechanic-vehicle-info,
+.mechanic-service-info {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mechanic-vehicle-info strong,
+.mechanic-service-info strong {
+  overflow: hidden;
+  color: var(--admin-text);
+  font-size: 11px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mechanic-vehicle-info span,
+.mechanic-service-info span {
+  overflow: hidden;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mechanic-vehicle-km,
+.mechanic-service-row time {
+  flex: 0 0 auto;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-service-indicator {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--admin-success-soft);
+  color: var(--admin-success);
+  font-size: 14px;
+}
+
+.mechanic-empty,
+.mechanic-loading {
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 22px;
+  color: var(--admin-text-secondary);
+  text-align: center;
+}
+
+.mechanic-empty > i {
+  margin-bottom: 4px;
+  color: var(--admin-primary);
+  font-size: 25px;
+}
+
+.mechanic-empty strong {
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.mechanic-empty span,
+.mechanic-loading span:last-child {
+  max-width: 340px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.mechanic-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--admin-primary-soft);
+  border-top-color: var(--admin-primary);
+  border-radius: 50%;
+  animation: mechanic-spin 0.8s linear infinite;
+}
+
+@keyframes mechanic-spin {
+  to { transform: rotate(360deg); }
+}
+
+.mechanic-count-pill {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.mechanic-panel-state {
+  min-height: 240px;
+}
+
+.mechanic-vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.mechanic-vehicle-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  background: var(--admin-secondary);
+}
+
+.mechanic-vehicle-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.mechanic-vehicle-status {
+  max-width: 55%;
+  overflow: hidden;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mechanic-vehicle-unit {
+  color: var(--admin-muted);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.mechanic-vehicle-card h4 {
+  margin: 5px 0 12px;
+  color: var(--admin-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mechanic-vehicle-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-vehicle-detail i {
+  width: 14px;
+  color: var(--admin-primary);
+  text-align: center;
+}
+
+.mechanic-table-scroll {
+  overflow-x: auto;
+}
+
+.mechanic-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.mechanic-history-table th {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--admin-border);
+  color: var(--admin-muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mechanic-history-table td {
+  min-width: 110px;
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--admin-border);
+  color: var(--admin-text);
+  font-size: 11px;
+  vertical-align: top;
+}
+
+.mechanic-history-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.mechanic-history-table td:first-child,
+.mechanic-history-table td:nth-child(2) {
+  display: table-cell;
+}
+
+.mechanic-history-table td small {
+  display: block;
+  margin-top: 4px;
+  color: var(--admin-muted);
+  font-size: 9px;
+}
+
+.mechanic-table-date {
+  white-space: nowrap;
+}
+
+.mechanic-observations {
+  min-width: 190px;
+  max-width: 360px;
+  color: var(--admin-text-secondary) !important;
+  line-height: 1.5;
+}
+
+.mechanic-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 15px;
+  margin-bottom: 17px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 12px;
+}
+
+.mechanic-client-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #f1d49b;
+  border-radius: 10px;
+  background: #fff9e9;
+  color: #805b13;
+  font-size: 12px;
+}
+
+.mechanic-client-warning i {
+  margin-top: 2px;
+  color: #b7791f;
+}
+
+.dark-mode .mechanic-client-warning {
+  border-color: rgba(245, 158, 11, 0.25);
+  background: rgba(120, 75, 12, 0.16);
+  color: #f3d28a;
+}
+
+.mechanic-error > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mechanic-error button {
+  padding: 7px 10px;
+  border: 1px solid #fca5a5;
+  border-radius: 7px;
+  background: #fff;
+  color: #b91c1c;
+  font-size: 10px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.dark-mode .mechanic-error {
+  border-color: rgba(248, 113, 113, 0.25);
+  background: rgba(127, 29, 29, 0.16);
+  color: #fca5a5;
+}
+
+.dark-mode .mechanic-error button {
+  border-color: rgba(248, 113, 113, 0.25);
+  background: #241719;
+  color: #fca5a5;
+}
+
+.mechanic-alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mechanic-alert-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mechanic-header-alerts {
+  position: relative;
+}
+
+.mechanic-notifications-dropdown {
+  position: absolute;
+  z-index: 900;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(360px, calc(100vw - 28px));
+  overflow: hidden;
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  background: var(--admin-card);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.18);
+}
+
+.mechanic-notifications-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--admin-border);
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.mechanic-notifications-heading span {
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-notifications-list {
+  max-height: min(390px, 60vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.mechanic-header-notification {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 0;
+  border-bottom: 1px solid var(--admin-border);
+  background: var(--admin-card);
+  color: var(--admin-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+.mechanic-header-notification.is-unread {
+  background: var(--admin-primary-soft-2);
+}
+
+.mechanic-header-notification:hover,
+.mechanic-notifications-footer:hover {
+  background: var(--admin-secondary);
+}
+
+.mechanic-header-notification > i {
+  margin-top: 2px;
+}
+
+.mechanic-header-notification span {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.mechanic-header-notification strong {
+  color: var(--admin-text);
+  font-size: 10px;
+}
+
+.mechanic-header-notification small {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--admin-text-secondary);
+  font-size: 9px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.mechanic-header-notification .mechanic-notification-status {
+  display: block;
+  color: var(--admin-danger);
+  font-weight: 700;
+}
+
+.mechanic-header-notification:not(.is-unread) .mechanic-notification-status {
+  color: var(--admin-muted);
+  font-weight: 500;
+}
+
+.mechanic-notifications-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 14px;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-notifications-state.is-error {
+  color: var(--admin-danger);
+}
+
+.mechanic-notifications-footer {
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border: 0;
+  background: var(--admin-card);
+  color: var(--admin-primary);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mechanic-alert-message {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  font-size: 11px;
+}
+
+.mechanic-alert-message.is-error {
+  border-color: rgba(220, 38, 38, 0.25);
+  background: var(--admin-danger-soft);
+  color: var(--admin-danger);
+}
+
+.mechanic-alert-message.is-success {
+  border-color: rgba(22, 163, 74, 0.25);
+  background: var(--admin-success-soft);
+  color: var(--admin-success);
+}
+
+.mechanic-alert-refresh,
+.mechanic-pending-heading button,
+.mechanic-appointment-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-card);
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.mechanic-alert-refresh:disabled,
+.mechanic-pending-read:disabled,
+.mechanic-appointment-action:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.mechanic-alert-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.mechanic-pending-alerts {
+  overflow: hidden;
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  background: var(--admin-card);
+}
+
+.mechanic-pending-heading,
+.mechanic-pending-heading > div {
+  display: flex;
+  align-items: center;
+}
+
+.mechanic-pending-heading {
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 15px;
+  background: var(--admin-primary-soft);
+}
+
+.mechanic-pending-heading > div {
+  gap: 10px;
+  color: var(--admin-primary);
+}
+
+.mechanic-pending-heading > div > i {
+  font-size: 17px;
+}
+
+.mechanic-pending-heading strong,
+.mechanic-pending-heading span {
+  display: block;
+}
+
+.mechanic-pending-heading strong {
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.mechanic-pending-heading span {
+  margin-top: 2px;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-pending-heading button {
+  border-color: transparent;
+  background: transparent;
+  color: var(--admin-primary);
+}
+
+.mechanic-pending-list {
+  padding: 0 15px;
+}
+
+.mechanic-pending-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 0;
+  border-top: 1px solid var(--admin-border);
+}
+
+.mechanic-pending-icon {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-pending-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.mechanic-pending-copy > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mechanic-pending-copy strong {
+  color: var(--admin-text);
+  font-size: 11px;
+}
+
+.mechanic-pending-copy time {
+  color: var(--admin-muted);
+  font-size: 9px;
+}
+
+.mechanic-pending-copy p {
+  margin: 4px 0 0;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.mechanic-pending-read {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-card);
+  color: var(--admin-primary);
+}
+
+.mechanic-client-requests {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.mechanic-client-request {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  background: var(--admin-secondary);
+}
+
+.mechanic-client-request > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.mechanic-client-request strong {
+  color: var(--admin-text);
+  font-size: 11px;
+}
+
+.mechanic-client-request p {
+  margin: 4px 0 0;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-alert-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.mechanic-alert-tabs button {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--admin-text-secondary);
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.mechanic-alert-tabs button.active {
+  border-bottom-color: var(--admin-accent);
+  color: var(--admin-primary);
+}
+
+.mechanic-alert-tabs button span,
+.mechanic-count-pill {
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: var(--admin-secondary);
+  color: var(--admin-text-secondary);
+  font-size: 9px;
+}
+
+.mechanic-alert-content-panel {
+  min-width: 0;
+}
+
+.mechanic-appointments-heading {
+  align-items: flex-start;
+}
+
+.mechanic-appointment-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.mechanic-observation-filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(145px, 190px) minmax(145px, 170px);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mechanic-observation-search {
+  position: relative;
+  min-width: 0;
+}
+
+.mechanic-observation-search > i {
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  color: var(--admin-muted);
+  font-size: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.mechanic-observation-search input,
+.mechanic-observation-filters select,
+.mechanic-observation-filters > input {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 6px 9px;
+  border: 1px solid var(--admin-border);
+  border-radius: 7px;
+  outline: none;
+  background: var(--admin-card);
+  color: var(--admin-text);
+  font: inherit;
+  font-size: 10px;
+}
+
+.mechanic-observation-search input {
+  padding-left: 31px;
+}
+
+.mechanic-observation-search input:focus,
+.mechanic-observation-filters select:focus,
+.mechanic-observation-filters > input:focus {
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 2px var(--admin-primary-soft);
+}
+
+.mechanic-appointment-filters select,
+.mechanic-appointment-filters input {
+  min-height: 34px;
+  padding: 6px 9px;
+  border: 1px solid var(--admin-border);
+  border-radius: 7px;
+  background: var(--admin-card);
+  color: var(--admin-text);
+  font: inherit;
+  font-size: 10px;
+}
+
+.mechanic-alert-table-wrap {
+  overflow-x: auto;
+}
+
+.mechanic-alert-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+
+.mechanic-alert-table th {
+  padding: 10px 11px;
+  border-bottom: 1px solid var(--admin-border);
+  background: var(--admin-secondary);
+  color: var(--admin-muted);
+  font-size: 9px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.mechanic-alert-table td {
+  max-width: 270px;
+  padding: 12px 11px;
+  border-bottom: 1px solid var(--admin-border);
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+  vertical-align: top;
+}
+
+.mechanic-alert-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.mechanic-alert-table td strong,
+.mechanic-alert-table td small {
+  display: block;
+}
+
+.mechanic-alert-table td strong {
+  color: var(--admin-text);
+  font-size: 10px;
+}
+
+.mechanic-alert-table td small {
+  margin-top: 4px;
+  color: var(--admin-muted);
+  font-size: 9px;
+}
+
+.mechanic-alert-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.mechanic-alert-symptoms span {
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+  font-size: 8px;
+}
+
+.mechanic-alert-description {
+  max-width: 260px;
+  margin: 5px 0 0;
+  line-height: 1.45;
+}
+
+.mechanic-alert-status {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: var(--admin-secondary);
+  color: var(--admin-text-secondary);
+  font-size: 9px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.mechanic-alert-status.is-proxima,
+.mechanic-alert-status.is-revisado {
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-alert-status.is-en_atencion,
+.mechanic-alert-status.is-pendiente,
+.mechanic-alert-status.is-vencida {
+  background: var(--admin-warning-soft);
+  color: var(--admin-warning);
+}
+
+.mechanic-alert-status.is-atendida,
+.mechanic-alert-status.is-atendido {
+  background: var(--admin-success-soft);
+  color: var(--admin-success);
+}
+
+.mechanic-alert-status.is-cancelada {
+  background: var(--admin-danger-soft);
+  color: var(--admin-danger);
+}
+
+.mechanic-appointment-action {
+  border-color: transparent;
+  background: var(--admin-primary-soft);
+  color: var(--admin-primary);
+}
+
+.mechanic-appointment-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mechanic-appointment-icon-action {
+  width: 31px;
+  height: 31px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-card);
+  color: var(--admin-primary);
+  cursor: pointer;
+}
+
+.mechanic-appointment-icon-action.is-reject {
+  color: var(--admin-danger);
+}
+
+.mechanic-appointment-icon-action:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.mechanic-reschedule-overlay {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.mechanic-reschedule-dialog {
+  width: min(100%, 460px);
+  padding: 20px;
+  border: 1px solid var(--admin-border);
+  border-radius: 15px;
+  background: var(--admin-card);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.25);
+}
+
+.mechanic-reschedule-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.mechanic-reschedule-heading span {
+  color: var(--admin-primary);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.mechanic-reschedule-heading h3 {
+  margin: 5px 0;
+  color: var(--admin-text);
+  font-size: 16px;
+}
+
+.mechanic-reschedule-heading p {
+  margin: 0;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.mechanic-reschedule-heading > button {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-card);
+  color: var(--admin-text-secondary);
+}
+
+.mechanic-reschedule-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.mechanic-reschedule-fields label {
+  display: grid;
+  gap: 6px;
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+}
+
+.mechanic-reschedule-fields input {
+  min-width: 0;
+  min-height: 38px;
+  padding: 7px 9px;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-card);
+  color: var(--admin-text);
+  font: inherit;
+}
+
+.mechanic-reschedule-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.mechanic-reschedule-actions button {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid var(--admin-border);
+  border-radius: 8px;
+  background: var(--admin-card);
+  color: var(--admin-text-secondary);
+  font-size: 10px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.mechanic-reschedule-actions button[type="submit"] {
+  border-color: transparent;
+  background: var(--admin-primary);
+  color: #fff;
+}
+
+.mechanic-reschedule-actions button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.mechanic-unassigned-hint {
+  color: var(--admin-muted);
+  font-size: 9px;
+}
+
+.mechanic-alert-empty {
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--admin-text-secondary);
+  text-align: center;
+  font-size: 10px;
+}
+
+.mechanic-alert-empty i {
+  color: var(--admin-primary);
+  font-size: 21px;
+}
+
+.mechanic-alert-empty strong {
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.mechanic-spin {
+  display: inline-block;
+  animation: mechanic-spin 0.8s linear infinite;
+}
+
+@keyframes mechanic-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1100px) {
+  .mechanic-vehicle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanic-client-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .mechanic-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-flow-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .mechanic-welcome {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .mechanic-welcome-mark {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    font-size: 24px;
+  }
+
+  .mechanic-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .mechanic-stat-card {
+    min-height: 82px;
+  }
+
+  .mechanic-vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-client-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-module-intro {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .mechanic-alert-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanic-appointments-heading {
+    flex-direction: column;
+  }
+
+  .mechanic-appointment-actions {
+    flex-wrap: wrap;
+  }
+
+  .mechanic-reschedule-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-appointment-filters {
+    width: 100%;
+  }
+
+  .mechanic-observation-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-appointment-filters select,
+  .mechanic-appointment-filters input {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .mechanic-alert-tabs button {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  .mechanic-module-intro h2 {
+    font-size: 20px !important;
+  }
+
+  .mechanic-flow-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-maintenance-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .mechanic-maintenance-main {
+    flex-basis: calc(100% - 60px);
+  }
+
+  .mechanic-maintenance-due {
+    align-items: flex-start;
+    padding-left: 50px;
+  }
+
+  .mechanic-alert-title {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .mechanic-alert-title time {
+    white-space: normal;
+  }
+
+  .mechanic-panel {
+    padding: 16px;
+  }
+
+  .mechanic-vehicle-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanic-history-table th,
+  .mechanic-history-table td {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  .mechanic-error {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

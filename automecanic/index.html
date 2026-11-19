@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <title>Automecanic</title>
+
+    <meta
+      name="application-name"
+      content="Automecanic"
+    />
+
+    <meta
+      name="description"
+      content="Sistema de administración y control de servicios automotrices Automecanic."
+    />
+
+    <link rel="icon" type="image/jpeg" href="/automecanic-logo.jpg" />
+
+    <link
+      rel="manifest"
+      href="/manifest.json"
+    />
+
+    <!-- =========================================
+         PWA / iOS / ANDROID
+    ========================================== -->
+
+    <meta
+      name="apple-mobile-web-app-capable"
+      content="yes"
+    />
+
+    <meta
+      name="mobile-web-app-capable"
+      content="yes"
+    />
+
+      <meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="default"
+    />
+
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Automecanic"
+    />
+
+    <!-- =========================================
+         COLOR PRINCIPAL DE LA APP
+         App.vue lo actualiza dinámicamente
+    ========================================== -->
+
+    <meta
+      id="app-theme-color"
+      name="theme-color"
+      content="#f1f5f9"
+    />
+
+    <!-- =========================================
+         TEMA INICIAL
+         Evita destello blanco al abrir la PWA
+    ========================================== -->
+
+    <script>
+      (() => {
+        try {
+          const savedTheme =
+            localStorage.getItem(
+              'automecanic-theme'
+            )
+
+          const isDark =
+            savedTheme === 'dark'
+
+          const backgroundColor =
+            isDark
+              ? '#030508'
+              : '#f1f5f9'
+
+          const colorScheme =
+            isDark
+              ? 'dark'
+              : 'light'
+
+          document.documentElement
+            .style.backgroundColor =
+              backgroundColor
+
+          document.documentElement
+            .style.colorScheme =
+              colorScheme
+
+          document.documentElement
+            .setAttribute(
+              'data-theme',
+              colorScheme
+            )
+
+          const themeMeta =
+            document.getElementById(
+              'app-theme-color'
+            )
+
+          if (themeMeta) {
+            themeMeta.setAttribute(
+              'content',
+              backgroundColor
+            )
+          }
+        } catch (error) {
+          console.warn(
+            'No se pudo cargar el tema inicial.',
+            error
+          )
+        }
+      })()
+    </script>
+
+    <!-- =========================================
+         ESTILOS BASE GLOBALES
+    ========================================== -->
+
+    <style>
+      html,
+      body,
+      #app {
+        margin: 0;
+        padding: 0;
+
+        width: 100%;
+        min-width: 0;
+
+        min-height: 100%;
+
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        background-color: #f1f5f9;
+      }
+
+      html[data-theme="light"],
+      html[data-theme="light"] body,
+      html[data-theme="light"] #app {
+        background-color: #f1f5f9;
+      }
+
+      html[data-theme="dark"],
+      html[data-theme="dark"] body,
+      html[data-theme="dark"] #app {
+        background-color: #030508;
+      }
+
+      body,
+      #app {
+        min-height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
+      }
+
+      body {
+        overflow-x: hidden;
+
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script
+      type="module"
+      src="/src/main.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+project_id = "noqknvwnejvauxzsbdsy"
+
+[functions.crear-cliente-mecanico]
+verify_jwt = false
+
+[functions.gestionar-cliente-mecanico]
+verify_jwt = false
+
+[functions.notificar-confirmacion-cita]
+verify_jwt = true
+
+[functions.notificar-accion-mecanico]
+verify_jwt = true
+
+[functions.notificar-alerta-relacion-mecanico]
+verify_jwt = false
+
+[functions.generar-reportes-mensuales]
+verify_jwt = true
