@@ -1279,6 +1279,20 @@
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .mechanic-header-alerts {
+    position: static;
+  }
+
+  .mechanic-notifications-dropdown {
+    top: calc(100% + 8px);
+    right: max(12px, env(safe-area-inset-right, 0px));
+    left: max(12px, env(safe-area-inset-left, 0px));
+    width: auto;
+    max-width: none;
+  }
+}
+
 .mechanic-alert-message {
   min-width: 0;
   display: flex;
