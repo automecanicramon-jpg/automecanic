@@ -183,7 +183,7 @@
               <button
                 class="logout-button"
                 type="button"
-                @click="emit('logout')"
+                @click="logout"
               >
                 <i class="bi bi-box-arrow-right"></i>
                 Cerrar sesión
@@ -488,6 +488,22 @@ const toggleNotifications = async () => {
 }
 
 const goToAlerts = () => changeSection('alertas')
+
+const logout = async () => {
+  showUserMenu.value = false
+
+  try {
+    const { error } = await supabase.auth.signOut()
+
+    if (error) {
+      console.error('Error cerrando sesión del mecánico:', error)
+    }
+  } catch (error) {
+    console.error('Error al cerrar sesión del mecánico:', error)
+  } finally {
+    emit('logout')
+  }
+}
 
 const getHeaderAlertTitle = alert => ({
   CITA_NUEVA: 'Nueva cita solicitada',
