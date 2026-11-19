@@ -1227,22 +1227,21 @@
 
 .mechanic-header-notification strong {
   color: var(--admin-text);
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .mechanic-header-notification small {
-  display: -webkit-box;
-  overflow: hidden;
+  display: block;
   color: var(--admin-text-secondary);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.45;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
 }
 
 .mechanic-header-notification .mechanic-notification-status {
   display: block;
   color: var(--admin-danger);
+  font-size: 11px;
   font-weight: 700;
 }
 
