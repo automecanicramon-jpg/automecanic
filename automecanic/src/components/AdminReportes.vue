@@ -553,21 +553,17 @@ Código completo copiado.
                   {{ month.label }}
                 </option>
               </select>
-              <select
+              <input
                 id="report-history-period-year"
                 v-model="reportHistorySearchYear"
+                type="number"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                placeholder="Año"
                 aria-label="Año del periodo"
                 :disabled="historyLoading"
               >
-                <option value="">Año</option>
-                <option
-                  v-for="year in reportHistoryYears"
-                  :key="year"
-                  :value="String(year)"
-                >
-                  {{ year }}
-                </option>
-              </select>
             </div>
           </div>
 
@@ -1099,26 +1095,17 @@ const reportHistorySearchYear =
 
 const reportHistorySearchPeriod =
   computed(() => {
+    const year = Number(reportHistorySearchYear.value)
+
     if (
       !reportHistorySearchMonth.value ||
-      !reportHistorySearchYear.value
+      !Number.isInteger(year) ||
+      year < 1
     ) {
       return ''
     }
 
-    return `${reportHistorySearchYear.value}-${reportHistorySearchMonth.value.padStart(2, '0')}`
-  })
-
-const reportHistoryYears =
-  computed(() => {
-    const years = new Set([
-      new Date().getFullYear(),
-      ...reportHistory.value
-        .map(item => Number(item.anio))
-        .filter(year => Number.isInteger(year) && year > 0)
-    ])
-
-    return [...years].sort((first, second) => second - first)
+    return `${year}-${reportHistorySearchMonth.value.padStart(2, '0')}`
   })
 
 const reportHistorySearchType =
