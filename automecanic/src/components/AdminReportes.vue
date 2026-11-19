@@ -536,13 +536,39 @@ Código completo copiado.
           </div>
 
           <div class="report-history-field">
-            <label for="report-history-period">Periodo (mes y año)</label>
-            <input
-              id="report-history-period"
-              v-model="reportHistorySearchPeriod"
-              type="month"
-              :disabled="historyLoading"
-            />
+            <label for="report-history-period-month">Periodo (mes y año)</label>
+            <div class="report-history-period-fields">
+              <select
+                id="report-history-period-month"
+                v-model="reportHistorySearchMonth"
+                aria-label="Mes del periodo"
+                :disabled="historyLoading"
+              >
+                <option value="">Mes</option>
+                <option
+                  v-for="month in months"
+                  :key="month.value"
+                  :value="month.value"
+                >
+                  {{ month.label }}
+                </option>
+              </select>
+              <select
+                id="report-history-period-year"
+                v-model="reportHistorySearchYear"
+                aria-label="Año del periodo"
+                :disabled="historyLoading"
+              >
+                <option value="">Año</option>
+                <option
+                  v-for="year in reportHistoryYears"
+                  :key="year"
+                  :value="String(year)"
+                >
+                  {{ year }}
+                </option>
+              </select>
+            </div>
           </div>
 
           <button
@@ -1065,8 +1091,35 @@ const successMessage =
 const reportHistory =
   ref([])
 
-const reportHistorySearchPeriod =
+const reportHistorySearchMonth =
   ref('')
+
+const reportHistorySearchYear =
+  ref('')
+
+const reportHistorySearchPeriod =
+  computed(() => {
+    if (
+      !reportHistorySearchMonth.value ||
+      !reportHistorySearchYear.value
+    ) {
+      return ''
+    }
+
+    return `${reportHistorySearchYear.value}-${reportHistorySearchMonth.value.padStart(2, '0')}`
+  })
+
+const reportHistoryYears =
+  computed(() => {
+    const years = new Set([
+      new Date().getFullYear(),
+      ...reportHistory.value
+        .map(item => Number(item.anio))
+        .filter(year => Number.isInteger(year) && year > 0)
+    ])
+
+    return [...years].sort((first, second) => second - first)
+  })
 
 const reportHistorySearchType =
   ref('servicios')
@@ -6060,6 +6113,13 @@ const printReport =
   color: var(--admin-text);
   font: inherit;
   line-height: normal;
+}
+
+.report-history-period-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
 }
 
 .report-history-view {
