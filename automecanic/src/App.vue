@@ -945,8 +945,8 @@ const switchTab =
   Se utiliza un único onMounted para:
 
    1. Restaurar el tema.
-   2. Cerrar la sesión local anterior para que
-      el login aparezca en cada nuevo arranque.
+   2. Restaurar la sesión autenticada de Supabase,
+      excepto durante la recuperación de contraseña.
 */
 
 onMounted(
@@ -986,38 +986,10 @@ onMounted(
 
 
     /* -----------------------------------------------
-       MOSTRAR LOGIN AL INICIAR
+       RESTAURAR SESIÓN AUTENTICADA
     ----------------------------------------------- */
 
-    /*
-      Supabase conserva la sesión entre aperturas.
-      La cerramos localmente para evitar entrar
-      directamente al dashboard del último usuario.
-      No se toca la sesión temporal de recuperación
-      de contraseña.
-    */
-
-    if (!isPasswordRecoveryUrl()) {
-      try {
-        const { error } = await supabase.auth.signOut({
-          scope: 'local'
-        })
-
-        if (error) {
-          console.error(
-            'No fue posible cerrar la sesión local al iniciar:',
-            error
-          )
-        }
-      } catch (error) {
-        console.error(
-          'Error preparando el inicio de sesión:',
-          error
-        )
-      }
-    }
-
-    loggedUser.value = null
+    await restoreAuthenticatedSession()
 
 
     /*
