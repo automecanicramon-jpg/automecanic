@@ -547,8 +547,32 @@ const getHeaderAlertTitle = alert => ({
 }[alert.tipo_alerta] || alert.tipo_alerta?.replaceAll('_', ' ') || 'Alerta')
 
 const handleGlobalClick = event => {
-  if (!event.target.closest('.mechanic-header-alerts')) {
+  const target = event?.target
+
+  if (!(target instanceof Node)) {
     showNotificationsDropdown.value = false
+    showUserMenu.value = false
+    return
+  }
+
+  const path = typeof event.composedPath === 'function'
+    ? event.composedPath()
+    : []
+
+  const clickedInside = selector =>
+    path.some(node =>
+      node instanceof Element && node.closest(selector)
+    ) || (
+      target instanceof Element &&
+      target.closest(selector)
+    )
+
+  if (!clickedInside('.mechanic-header-alerts')) {
+    showNotificationsDropdown.value = false
+  }
+
+  if (!clickedInside('.profile-wrapper')) {
+    showUserMenu.value = false
   }
 }
 
