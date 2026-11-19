@@ -172,6 +172,10 @@
 
               <div class="dropdown-divider"></div>
 
+              <PushNotificationsControl
+                :user-id="mechanic?.id_usuario"
+              />
+
               <button
                 type="button"
                 @click="showProfileModal = true; showUserMenu = false"
@@ -295,6 +299,13 @@ import { obtenerVehiculosMecanico } from '../services/vehiculoService.js'
 import { obtenerHistorialServiciosMecanico } from '../services/servicioService.js'
 import { obtenerAlertasSistema } from '../services/alertaService.js'
 import { supabase } from '../services/supabase.js'
+import {
+  actualizarInsigniaAplicacion,
+  desactivarNotificacionesPush,
+  limpiarInsigniaAplicacion,
+  obtenerSuscripcionPush
+} from '../services/pushNotificationService.js'
+import PushNotificationsControl from './PushNotificationsControl.vue'
 import '../styles/admin.css'
 import '../styles/mechanic.css'
 
@@ -453,6 +464,13 @@ const loadMechanicNotifications = async () => {
     const unread = alerts.filter(alert => String(alert.estado || '').toUpperCase() !== 'LEIDA')
     alertCount.value = unread.length
     recentNotifications.value = alerts
+    actualizarInsigniaAplicacion(userId)
+      .catch(error => {
+        console.error(
+          'Error actualizando el contador de notificaciones de la app:',
+          error
+        )
+      })
   } catch (error) {
     console.error('Error cargando notificaciones del mecánico:', error)
     notificationsError.value = 'No fue posible cargar tus notificaciones.'
@@ -491,6 +509,23 @@ const goToAlerts = () => changeSection('alertas')
 
 const logout = async () => {
   showUserMenu.value = false
+
+  try {
+    const subscription = await obtenerSuscripcionPush()
+    if (subscription) {
+      await desactivarNotificacionesPush(
+        props.mechanic?.id_usuario,
+        subscription
+      )
+    }
+
+    await limpiarInsigniaAplicacion()
+  } catch (error) {
+    console.error(
+      'Error desactivando notificaciones del mecánico al cerrar sesión:',
+      error
+    )
+  }
 
   try {
     const { error } = await supabase.auth.signOut()

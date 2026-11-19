@@ -240,6 +240,10 @@
 
               <div class="amc-dropdown-divider"></div>
 
+              <PushNotificationsControl
+                :user-id="cliente?.id_usuario"
+              />
+
               <button
                 type="button"
                 @click="showProfileModal = true; showUserMenu = false"
@@ -1861,6 +1865,13 @@ import {
 } from 'vue'
 
 import { supabase } from '../services/supabase.js'
+import {
+  actualizarInsigniaAplicacion,
+  desactivarNotificacionesPush,
+  limpiarInsigniaAplicacion,
+  obtenerSuscripcionPush
+} from '../services/pushNotificationService.js'
+import PushNotificationsControl from './PushNotificationsControl.vue'
 
 import {
   obtenerVehiculosCliente,
@@ -2348,6 +2359,14 @@ const loadClientNotifications = async () => {
         })
       )
 
+    actualizarInsigniaAplicacion(idUsuario)
+      .catch(error => {
+        console.error(
+          'Error actualizando el contador de notificaciones de la app:',
+          error
+        )
+      })
+
     if (showNotificationsDropdown.value) {
       notificacionesRecientes.value = notifications.value
         .filter(notification => !notification.read)
@@ -2399,6 +2418,14 @@ const markNotificationAsRead = async notification => {
 
     notification.fecha_lectura =
       new Date().toISOString()
+
+    actualizarInsigniaAplicacion(props.cliente?.id_usuario)
+      .catch(error => {
+        console.error(
+          'Error actualizando el contador de notificaciones de la app:',
+          error
+        )
+      })
   } catch (error) {
     console.error(
       'Error marcando la alerta como leída:',
@@ -2496,6 +2523,14 @@ const marcarTodasComoLeidas =
 
       notificacionesRecientes.value =
         []
+
+      actualizarInsigniaAplicacion(props.cliente?.id_usuario)
+        .catch(error => {
+          console.error(
+            'Error actualizando el contador de notificaciones de la app:',
+            error
+          )
+        })
     } catch (error) {
       console.error(
         'Error marcando todas como leídas:',
@@ -4049,6 +4084,22 @@ const logout = async () => {
   showUserMenu.value =
     false
 
+  try {
+    const subscription = await obtenerSuscripcionPush()
+    if (subscription) {
+      await desactivarNotificacionesPush(
+        props.cliente?.id_usuario,
+        subscription
+      )
+    }
+
+    await limpiarInsigniaAplicacion()
+  } catch (error) {
+    console.error(
+      'Error desactivando notificaciones del cliente al cerrar sesión:',
+      error
+    )
+  }
 
   try {
     const {
@@ -4450,7 +4501,7 @@ onMounted(async () => {
     clientAlertChannel = supabase
       .channel(`client-alerts-${clientUserId}`)
       .on('postgres_changes', {
-        event: 'INSERT',
+        event: '*',
         schema: 'public',
         table: 'alerta',
         filter: `id_usuario=eq.${clientUserId}`

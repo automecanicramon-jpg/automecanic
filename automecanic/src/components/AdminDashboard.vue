@@ -400,8 +400,11 @@
                 </div>
               </div>
 
-
               <div class="dropdown-divider"></div>
+
+              <PushNotificationsControl
+                :user-id="admin?.id_usuario"
+              />
 
 
               <button
@@ -656,10 +659,19 @@ import {
   supabase
 } from '../services/supabase.js'
 
+import {
+  actualizarInsigniaAplicacion,
+  desactivarNotificacionesPush,
+  limpiarInsigniaAplicacion,
+  obtenerSuscripcionPush
+} from '../services/pushNotificationService.js'
+
 
 /* ============================================================
    COMPONENTES
 ============================================================ */
+
+import PushNotificationsControl from './PushNotificationsControl.vue'
 
 import AdminInicio from './AdminInicio.vue'
 
@@ -1047,6 +1059,16 @@ const cargarNotificacionesRecientes =
       cargandoNotificaciones.value = false
     }
   }
+
+const actualizarInsigniaAdmin = () => {
+  actualizarInsigniaAplicacion(props.admin?.id_usuario)
+    .catch(error => {
+      console.error(
+        'Error actualizando el contador de notificaciones de la app:',
+        error
+      )
+    })
+}
 
 
 const toggleNotifications =
@@ -1484,6 +1506,23 @@ const logout =
       false
 
     try {
+      const subscription = await obtenerSuscripcionPush()
+      if (subscription) {
+        await desactivarNotificacionesPush(
+          props.admin?.id_usuario,
+          subscription
+        )
+      }
+
+      await limpiarInsigniaAplicacion()
+    } catch (error) {
+      console.error(
+        'Error desactivando notificaciones del administrador al cerrar sesión:',
+        error
+      )
+    }
+
+    try {
       const {
         error
       } =
@@ -1569,6 +1608,7 @@ onMounted(
         total => {
           alertCount.value =
             total
+          actualizarInsigniaAdmin()
         }
       )
       .catch(
@@ -1585,6 +1625,16 @@ onMounted(
       .on(
         'postgres_changes',
         {
+          event: '*',
+          schema: 'public',
+          table: 'alerta',
+          filter: `id_usuario=eq.${props.admin?.id_usuario}`
+        },
+        actualizarInsigniaAdmin
+      )
+      .on(
+        'postgres_changes',
+        {
           event: 'INSERT',
           schema: 'public',
           table: 'alerta',
@@ -1594,6 +1644,7 @@ onMounted(
           try {
             alertCount.value =
               await obtenerContadorAlertas()
+            actualizarInsigniaAdmin()
 
             if (showNotificationsDropdown.value) {
               await cargarNotificacionesRecientes()

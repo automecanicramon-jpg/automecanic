@@ -44,3 +44,16 @@ Para que las propuestas de reprogramación hechas por el administrador también 
 ## Eliminación de mecánicos con historial
 
 Ejecuta `supabase/migrations/20261119000000_eliminar_mecanico_con_historial.sql` y después `supabase/migrations/20261119001000_preservar_historial_mecanico.sql`; despliega la función `eliminar-personal-administrativo` desde `supabase/functions/eliminar-personal-administrativo`. La eliminación se bloquea mientras el mecánico tenga vehículos, clientes asignados o citas próximas/en atención. Se eliminan su perfil de usuario y su ficha activa; los servicios, las citas anteriores y las actividades no se borran, y conservan la atribución mediante una ficha histórica mínima con su nombre y especialidad. La cuenta de autenticación de Supabase también se elimina. Aplica las migraciones y despliega la función antes de usar la acción desde el panel.
+
+## Notificaciones push
+
+Las notificaciones push son opcionales y cada administrador, mecánico o cliente las activa desde su menú de perfil en cada dispositivo. Para configurarlas:
+
+1. Genera un par de claves VAPID con `npx --yes web-push generate-vapid-keys`. Conserva la clave privada solo en Supabase; la pública se usa en el frontend.
+2. En Vercel, agrega `VITE_VAPID_PUBLIC_KEY` con la clave pública y vuelve a desplegar. Para desarrollo local, agrega la misma variable pública al `.env` local, que no se debe publicar.
+3. En Supabase → Edge Functions → Secrets, agrega `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY` y `VAPID_SUBJECT` (por ejemplo, `mailto:soporte@tu-dominio.com`). No compartas ni agregues la clave privada al frontend.
+4. En Supabase → SQL Editor, ejecuta `supabase/migrations/20261120000000_notificaciones_push.sql`. Esta migración usa el secreto Vault `automecanic_service_role_key` ya configurado para invocar la función después de insertar una alerta.
+5. Despliega `send-push-notification` desde `supabase/functions/send-push-notification` y publica el frontend en Vercel.
+6. Abre AutoMecanic en HTTPS, inicia sesión y en el menú de perfil pulsa **Activar notificaciones**; acepta el permiso del navegador. En iPhone/iPad instala primero la web en la pantalla de inicio. El contador numérico del icono se muestra solo si el sistema operativo y el navegador ofrecen la API de insignia.
+
+La aplicación envía una notificación del sistema por cada nueva alerta dirigida a la cuenta. Las suscripciones se guardan por usuario y dispositivo; el usuario puede desactivarlas desde el mismo menú de perfil.
